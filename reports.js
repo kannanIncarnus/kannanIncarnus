@@ -19,7 +19,7 @@
     });
 
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("http://192.168.168.92:8080/framework/reportingservice/patientreports/getpatients/2018-01-01/2018-01-04", function(resp) {
+        $.getJSON("https://52.220.168.61:8850/thirdparty/tableauservice/patientreports/getpatients/2019-06-01/2019-07-04", function(resp) {
             var data = resp.patients,
                 tableData = [];
     
