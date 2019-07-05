@@ -44,9 +44,9 @@
                     "latitude": "",
                     "longitude": "",
                     "createdby": data[i].createdby,
-                    "createddatetime": "",
+                    "createddatetime": data[i].createdat,
                     "modifiedby": data[i].modifiedby,
-                    "modifieddatetime": ""
+                    "modifieddatetime": data[i].modifieddat
                 });
             }
     
@@ -104,13 +104,23 @@
             id: "pincode",
             alias: "pincode",
             dataType: tableau.dataTypeEnum.string
-        }, {
+        }, 
+        {
+            id: "createddatetime",
+            alias: "createddatetime",
+            dataType: tableau.dataTypeEnum.string
+        }, 
+        {
             id: "createdby",
             alias: "createdby",
             dataType: tableau.dataTypeEnum.string
         }, {
             id: "modifiedby",
             alias: "modifiedby",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "modifieddatetime",
+            alias: "modifieddatetime",
             dataType: tableau.dataTypeEnum.string
         }
     ];
