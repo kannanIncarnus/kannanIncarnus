@@ -76,6 +76,10 @@
             id: "gender",
             alias: "gender",
             dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "mrn",
+            alias: "mrn",
+            dataType: tableau.dataTypeEnum.string
         },
         {
             id:"registereddate",
