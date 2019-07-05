@@ -13,7 +13,7 @@
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "Registered Patient";
+            tableau.connectionName = "Registerted Patients";
             tableau.submit();
         });
     });
@@ -27,6 +27,9 @@
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
                     "regid": data[i]._id,
+                    "id": data[i]._id,
+                    "PatientName": data[i].firstname,
+                    "createdat": data[i].createdat,
                     "regdatetime": data[i].registereddate,
                     "hospital": "",
                     "hospitalunit": "", //To Check
@@ -41,11 +44,12 @@
                     "latitude": "", //To Check
                     "longitude": "", //To Check
                     "createdby": data[i].createdby,
-                    "createddatetime": data[i].createddatetime,
+                    "createddatetime": "",
                     "modifiedby": data[i].modifiedby,
-                    "modifieddatetime": data[i].modifieddatetime
+                    "modifieddatetime": ""
                 });
             }
+    
             table.appendRows(tableData);
             doneCallback();
         });
@@ -125,4 +129,6 @@
     
         schemaCallback([tableSchema]);
     };
+    
+    
 })();
