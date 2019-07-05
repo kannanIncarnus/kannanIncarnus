@@ -13,7 +13,7 @@
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "Registerted Patients";
+            tableau.connectionName = "Patient Reports";
             tableau.submit();
         });
     });
@@ -56,70 +56,26 @@
     };
     
     myConnector.getSchema = function (schemaCallback) {
-        var cols = [
-            {
-            id: "regid",
+        var cols = [{
+            id: "id",
             dataType: tableau.dataTypeEnum.string
-            },{
-            id: "regdatetime",
+        }, {
+            id: "PatientName",
+            alias: "Patient Name",
             dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "hospital",
-            alias: "hospital",
+        }, {
+            id: "createdat",
+            alias: "createdat",
             dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "hospitalunit",
-            alias: "hospital unit",
+        }, {
+            id: "email",
+            alias: "e-mail",
             dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "mrn",
-            alias: "mrn",
+        },
+        {
+            id:"registereddate",
             dataType: tableau.dataTypeEnum.string
-            },
-            {
-            id:"gender",
-            dataType: tableau.dataTypeEnum.string
-            },
-            {
-            id: "age",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "agegroup",
-            alias: "age group",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "patienttype",
-            alias: "patient type",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "country",
-            alias: "country",
-            dataType: tableau.dataTypeEnum.string
-            },
-            {
-            id:"state",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"city",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"pincode",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"latitude",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"longitude",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"createdby",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"createddatetime",
-            dataType: tableau.dataTypeEnum.string},
-            ,{
-            id:"modifieddatetime",
-            dataType: tableau.dataTypeEnum.string}];
+        }];
     
         var tableSchema = {
             id: "patientFeed",
