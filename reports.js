@@ -26,11 +26,27 @@
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
+                    "regid": data[i]._id,
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
                     "createdat": data[i].createdat,
-                    "email": data[i].email,
-                    "registereddate": data[i].registereddate
+                    "regdatetime": data[i].registereddate,
+                    "hospital": "",
+                    "hospitalunit": "", //To Check
+                    "mrn": data[i].mrn,
+                    "gender": data[i].gender,
+                    "agegroup": "", //To Check
+                    "patienttype": data[i].patienttype,
+                    "country": data[i].country,
+                    "state": data[i].state,
+                    "city": data[i].city,
+                    "pincode": data[i].zipcode,
+                    "latitude": "", //To Check
+                    "longitude": "", //To Check
+                    "createdby": data[i].createdby,
+                    "createddatetime": "",
+                    "modifiedby": data[i].modifiedby,
+                    "modifieddatetime": ""
                 });
             }
     
