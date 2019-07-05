@@ -73,14 +73,35 @@
             alias: "createdat",
             dataType: tableau.dataTypeEnum.string
         }, {
-            id: "email",
-            alias: "e-mail",
+            id: "gender",
+            alias: "gender",
             dataType: tableau.dataTypeEnum.string
         },
         {
             id:"registereddate",
             dataType: tableau.dataTypeEnum.string
-        }];
+        }, {
+            id: "patienttype",
+            alias: "patienttype",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "country",
+            alias: "country",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "state",
+            alias: "state",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "city",
+            alias: "city",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "pincode",
+            alias: "pincode",
+            dataType: tableau.dataTypeEnum.string
+        }
+    ];
     
         var tableSchema = {
             id: "patientFeed",
