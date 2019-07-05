@@ -100,6 +100,14 @@
             id: "pincode",
             alias: "pincode",
             dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "createdby",
+            alias: "createdby",
+            dataType: tableau.dataTypeEnum.string
+        }, {
+            id: "modifiedby",
+            alias: "modifiedby",
+            dataType: tableau.dataTypeEnum.string
         }
     ];
     
