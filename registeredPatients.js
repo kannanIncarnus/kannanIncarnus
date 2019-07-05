@@ -19,7 +19,7 @@
     });
 
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatients/2019-06-01/2019-07-04", function(resp) {
+        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatients/2019-06-01/2019-07-04", function(resp) {
             var data = resp.patients,
                 tableData = [];
     
@@ -28,8 +28,8 @@
                 tableData.push({
                     "regid": data[i]._id,
                     "regdatetime": data[i].registereddate,
-                    "hospital": data[i].hospital, //To Check
-                    "hospitalunit": data[i].hospitalunit, //To Check
+                    "hospital": "", //To Check
+                    "hospitalunit": "", //To Check
                     "mrn": data[i].mrn,
                     "gender": data[i].gender,
                     "agegroup": data[i].agegroup, //To Check
@@ -38,8 +38,8 @@
                     "state": data[i].state,
                     "city": data[i].city,
                     "pincode": data[i].zipcode,
-                    "latitude": data[i].latitude, //To Check
-                    "longitude": data[i].longitude, //To Check
+                    "latitude": "", //To Check
+                    "longitude": "", //To Check
                     "createdby": data[i].createdby, //To Check
                     "createddatetime": data[i].createddatetime, //To Check
                     "modifiedby": data[i].modifiedby, //To Check
