@@ -32,7 +32,7 @@
                     "createdat": data[i].createdat,
                     "regdatetime": data[i].registereddate,
                     "hospital": "",
-                    "hospitalunit": "", //To Check
+                    "hospitalunit": "",
                     "mrn": data[i].mrn,
                     "gender": data[i].gender,
                     "agegroup": "", //To Check
@@ -41,8 +41,8 @@
                     "state": data[i].state,
                     "city": data[i].city,
                     "pincode": data[i].zipcode,
-                    "latitude": "", //To Check
-                    "longitude": "", //To Check
+                    "latitude": "",
+                    "longitude": "",
                     "createdby": data[i].createdby,
                     "createddatetime": "",
                     "modifiedby": data[i].modifiedby,
@@ -119,6 +119,4 @@
     
         schemaCallback([tableSchema]);
     };
-    
-    
 })();

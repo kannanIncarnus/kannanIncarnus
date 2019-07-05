@@ -31,14 +31,14 @@
                     "DischargeDateTime": data[i].medicaldischargedate,
                     "DISCWARD": data[i].dischargeward, //To Check
                     "OPVISITDATE": data[i].opdvisitdate,
-                    "FOLLOWUPDATE": data[i].followupdate,
-                    "createdby": data[i].createdby, //To Check
+                    "FOLLOWUPDATE": data[i].followupdate, //To Check
+                    "createdby": data[i].createdby,
                     "createddatetime": data[i].createdat,
                     "modifiedby": data[i].country,
                     "modifieddatetime": data[i].modifiedat,
                     "DIDTRIAGE": data[i].traige,
                     "Readmission Date": data[i].readmdate,
-                    "ReadmissionDoctor": data[i].careprovider, //To Check
+                    "ReadmissionDoctor": data[i].careprovidername,
                     "ReadmissionDepartment": data[i].readmdepartment, //To Check
                     "Admission Type": data[i].admtype //To Check
                 });
