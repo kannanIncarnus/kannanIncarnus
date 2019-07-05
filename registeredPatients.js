@@ -56,7 +56,12 @@
     };
     
     myConnector.getSchema = function (schemaCallback) {
-        var cols = [{
+        var cols = [
+        {
+            id: "regid",
+            dataType: tableau.dataTypeEnum.string
+        },
+            {
             id: "id",
             dataType: tableau.dataTypeEnum.string
         }, {
