@@ -32,7 +32,7 @@
                     "hospitalunit": "", //To Check
                     "mrn": data[i].mrn,
                     "gender": data[i].gender,
-                    "agegroup": data[i].agegroup, //To Check
+                    "agegroup": "", //To Check
                     "patienttype": data[i].patienttype,
                     "country": data[i].country,
                     "state": data[i].state,
