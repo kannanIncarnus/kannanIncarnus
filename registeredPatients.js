@@ -28,7 +28,7 @@
                 tableData.push({
                     "regid": data[i]._id,
                     "regdatetime": data[i].registereddate,
-                    "hospital": "", //To Check
+                    "hospital": "",
                     "hospitalunit": "", //To Check
                     "mrn": data[i].mrn,
                     "gender": data[i].gender,
@@ -40,10 +40,10 @@
                     "pincode": data[i].zipcode,
                     "latitude": "", //To Check
                     "longitude": "", //To Check
-                    "createdby": data[i].createdby, //To Check
-                    "createddatetime": data[i].createddatetime, //To Check
-                    "modifiedby": data[i].modifiedby, //To Check
-                    "modifieddatetime": data[i].modifieddatetime //To Check
+                    "createdby": data[i].createdby,
+                    "createddatetime": data[i].createddatetime,
+                    "modifiedby": data[i].modifiedby,
+                    "modifieddatetime": data[i].modifieddatetime
                 });
             }
             table.appendRows(tableData);
