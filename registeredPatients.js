@@ -19,7 +19,7 @@
     });
 
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatients/2019-06-01/2019-07-04", function(resp) {
+        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getRegisteredpatients/2019-06-01/2019-07-04", function(resp) {
             var data = resp.patients,
                 tableData = [];
     
@@ -100,7 +100,8 @@
             dataType: tableau.dataTypeEnum.string
             },{
             id:"pincode",
-            dataType: tableau.dataTypeEnum.string},{
+            dataType: tableau.dataTypeEnum.string},
+            {
             id:"latitude",
             dataType: tableau.dataTypeEnum.string},
             {

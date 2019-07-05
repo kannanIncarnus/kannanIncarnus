@@ -19,7 +19,7 @@
     });
 
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatients/2019-06-01/2019-07-04", function(resp) {
+        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getAdmissionList/2019-06-01/2019-07-04", function(resp) {
             var data = resp.patients,
                 tableData = [];
     
@@ -27,18 +27,18 @@
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
                     "ADMISSIONID": data[i]._id,
-                    "ADMISSIONDATETIME": data[i].admdate,
-                    "DischargeDateTime": data[i].dischargedate, //To Check
+                    "ADMISSIONDATETIME": data[i].admdate, //To Check
+                    "DischargeDateTime": data[i].medicaldischargedate,
                     "DISCWARD": data[i].dischargeward, //To Check
                     "OPVISITDATE": data[i].opdvisitdate,
                     "FOLLOWUPDATE": data[i].followupdate,
                     "createdby": data[i].createdby, //To Check
-                    "createddatetime": data[i].createddatetime,
+                    "createddatetime": data[i].createdat,
                     "modifiedby": data[i].country,
-                    "modifieddatetime": data[i].modifieddatetime,
+                    "modifieddatetime": data[i].modifiedat,
                     "DIDTRIAGE": data[i].traige,
                     "Readmission Date": data[i].readmdate,
-                    "ReadmissionDoctor": data[i].readmdoctor, //To Check
+                    "ReadmissionDoctor": data[i].careprovider, //To Check
                     "ReadmissionDepartment": data[i].readmdepartment, //To Check
                     "Admission Type": data[i].admtype //To Check
                 });

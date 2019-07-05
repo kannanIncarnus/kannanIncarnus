@@ -26,9 +26,9 @@
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
-                    "Visit": data[i].visit,
+                    "Visit": data[i].entype,
                     "VISITDATETIME": data[i].visitdate,
-                    "HOSPITAL": data[i].hospital,
+                    "HOSPITAL": data[i].hospital,  //to check
                     "HOSPITALUNIT": data[i]._id, //to check
                     "MRN": data[i].mrn,
                     "GENDER": data[i].gender,
@@ -37,21 +37,21 @@
                     "COUNTRY": data[i].country,
                     "STATE": data[i].state,
                     "CITY": data[i].city,
-                    "PLACE": data[i]._id, //to check
+                    "PLACE": data[i].area,
                     "PINCODE": data[i].pincode,
                     "DEPARTMENT": data[i].department,
                     "DOCTOR": data[i].careprovider,
                     "APPOINTMENTTYPE": data[i].apmttype,
-                    "Payor": data[i]._id,
+                    "Payor": data[i].payor,
                     "CHECKINTIME": data[i]._id,
                     "CHECKOUTTIME": data[i]._id,
                     "CHIEFCOMPLAINT": data[i]._id,
                     "REFSOURCE": data[i]._id,
                     "REFSOURCENAME": data[i]._id,
                     "CREATEDBY": data[i]._id,
-                    "CREATEDDATETIME": data[i]._id,
+                    "CREATEDDATETIME": data[i].createdat,
                     "MODIFIEDBY": data[i]._id,
-                    "MODIFIEDDATETIME": data[i]._id,
+                    "MODIFIEDDATETIME": data[i].modifiedat,
                     "Episode Type": data[i]._id,
                     "Following Episode Type": data[i]._id,
                     "Admission Visit ID": data[i]._id,
@@ -115,7 +115,8 @@
             dataType: tableau.dataTypeEnum.string
             },{
             id:"PLACE",
-            dataType: tableau.dataTypeEnum.string},{
+            dataType: tableau.dataTypeEnum.string},
+            {
             id:"PINCODE",
             dataType: tableau.dataTypeEnum.string},
             {
@@ -143,7 +144,8 @@
             dataType: tableau.dataTypeEnum.string
             },{
             id:"CHIEFCOMPLAINT",
-            dataType: tableau.dataTypeEnum.string},{
+            dataType: tableau.dataTypeEnum.string},
+            {
             id:"REFSOURCE",
             dataType: tableau.dataTypeEnum.string},
             {
@@ -154,7 +156,8 @@
             dataType: tableau.dataTypeEnum.string
             },{
             id:"CREATEDDATETIME",
-            dataType: tableau.dataTypeEnum.string},{
+            dataType: tableau.dataTypeEnum.string},
+            {
             id:"MODIFIEDBY",
             dataType: tableau.dataTypeEnum.string},
              {
@@ -170,7 +173,8 @@
             dataType: tableau.dataTypeEnum.string
             },{
             id:"Admission Visit ID",
-            dataType: tableau.dataTypeEnum.string},{
+            dataType: tableau.dataTypeEnum.string},
+            {
             id:"Admissiondatetime",
             dataType: tableau.dataTypeEnum.string},
             {
