@@ -27,20 +27,20 @@
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
                     "ADMISSIONID": data[i]._id,
-                    "ADMISSIONDATETIME": data[i].registereddate,
-                    "DischargeDateTime": data[i]._id, //To Check
-                    "DISCWARD": data[i]._id, //To Check
-                    "OPVISITDATE": data[i].mrn,
-                    "FOLLOWUPDATE": data[i].gender,
-                    "createdby": data[i]._id, //To Check
-                    "createddatetime": data[i].patienttype,
+                    "ADMISSIONDATETIME": data[i].admdate,
+                    "DischargeDateTime": data[i].dischargedate, //To Check
+                    "DISCWARD": data[i].dischargeward, //To Check
+                    "OPVISITDATE": data[i].opdvisitdate,
+                    "FOLLOWUPDATE": data[i].followupdate,
+                    "createdby": data[i].createdby, //To Check
+                    "createddatetime": data[i].createddatetime,
                     "modifiedby": data[i].country,
-                    "modifieddatetime": data[i].state,
-                    "DIDTRIAGE": data[i].city,
-                    "Readmission Date": data[i].zipcode,
-                    "ReadmissionDoctor": data[i]._id, //To Check
-                    "ReadmissionDepartment": data[i]._id, //To Check
-                    "Admission Type": data[i]._id //To Check
+                    "modifieddatetime": data[i].modifieddatetime,
+                    "DIDTRIAGE": data[i].traige,
+                    "Readmission Date": data[i].readmdate,
+                    "ReadmissionDoctor": data[i].readmdoctor, //To Check
+                    "ReadmissionDepartment": data[i].readmdepartment, //To Check
+                    "Admission Type": data[i].admtype //To Check
                 });
             }
             table.appendRows(tableData);
@@ -97,9 +97,11 @@
             dataType: tableau.dataTypeEnum.string
             },{
             id:"ReadmissionDepartment",
-            dataType: tableau.dataTypeEnum.string},{
+            dataType: tableau.dataTypeEnum.string},
+            {
             id:"Admission Type",
-            dataType: tableau.dataTypeEnum.string}];
+            dataType: tableau.dataTypeEnum.string}
+        ];
             
         var tableSchema = {
             id: "patientFeed",

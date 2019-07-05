@@ -28,22 +28,22 @@
                 tableData.push({
                     "regid": data[i]._id,
                     "regdatetime": data[i].registereddate,
-                    "hospital": data[i]._id, //To Check
-                    "hospitalunit": data[i]._id, //To Check
+                    "hospital": data[i].hospital, //To Check
+                    "hospitalunit": data[i].hospitalunit, //To Check
                     "mrn": data[i].mrn,
                     "gender": data[i].gender,
-                    "agegroup": data[i]._id, //To Check
+                    "agegroup": data[i].agegroup, //To Check
                     "patienttype": data[i].patienttype,
                     "country": data[i].country,
                     "state": data[i].state,
                     "city": data[i].city,
                     "pincode": data[i].zipcode,
-                    "latitude": data[i]._id, //To Check
-                    "longitude": data[i]._id, //To Check
-                    "createdby": data[i]._id, //To Check
-                    "createddatetime": data[i]._id, //To Check
-                    "modifiedby": data[i]._id, //To Check
-                    "modifieddatetime": data[i]._id //To Check
+                    "latitude": data[i].latitude, //To Check
+                    "longitude": data[i].longitude, //To Check
+                    "createdby": data[i].createdby, //To Check
+                    "createddatetime": data[i].createddatetime, //To Check
+                    "modifiedby": data[i].modifiedby, //To Check
+                    "modifieddatetime": data[i].modifieddatetime //To Check
                 });
             }
             table.appendRows(tableData);
@@ -52,12 +52,69 @@
     };
     
     myConnector.getSchema = function (schemaCallback) {
-        var cols = [{
-            id: "id",
+        var cols = [
+            {
+            id: "regid",
             dataType: tableau.dataTypeEnum.string
-        }];
-
-        
+            },{
+            id: "regdatetime",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "hospital",
+            alias: "hospital",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "hospitalunit",
+            alias: "hospital unit",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "mrn",
+            alias: "mrn",
+            dataType: tableau.dataTypeEnum.string
+            },
+            {
+            id:"gender",
+            dataType: tableau.dataTypeEnum.string
+            },
+            {
+            id: "age",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "agegroup",
+            alias: "age group",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "patienttype",
+            alias: "patient type",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "country",
+            alias: "country",
+            dataType: tableau.dataTypeEnum.string
+            },
+            {
+            id:"state",
+            dataType: tableau.dataTypeEnum.string
+            },{
+            id:"city",
+            dataType: tableau.dataTypeEnum.string
+            },{
+            id:"pincode",
+            dataType: tableau.dataTypeEnum.string},{
+            id:"latitude",
+            dataType: tableau.dataTypeEnum.string},
+            {
+            id:"longitude",
+            dataType: tableau.dataTypeEnum.string
+            },{
+            id:"createdby",
+            dataType: tableau.dataTypeEnum.string
+            },{
+            id:"createddatetime",
+            dataType: tableau.dataTypeEnum.string},
+            ,{
+            id:"modifieddatetime",
+            dataType: tableau.dataTypeEnum.string}];
     
         var tableSchema = {
             id: "patientFeed",
