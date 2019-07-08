@@ -41,12 +41,12 @@
                     "state": data[i].state,
                     "city": data[i].city,
                     "pincode": data[i].zipcode,
-                    "latitude": "", //To Check
-                    "longitude": "", //To Check
+                    "latitude": "",
+                    "longitude": "",
                     "createdby": data[i].createdby,
-                    "createddatetime": "",
+                    "createddatetime": data[i].createddatetime,
                     "modifiedby": data[i].modifiedby,
-                    "modifieddatetime": ""
+                    "modifieddatetime": data[i].modifieddatetime
                 });
             }
     

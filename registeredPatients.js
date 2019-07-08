@@ -19,7 +19,7 @@
     });
 
     myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatients/2019-06-01/2019-07-04", function(resp) {
+        $.getJSON("http://192.168.168.92:8083/framework/reportingservice/patientreports/getpatients/2019-01-01/2019-05-04", function(resp) {
             var data = resp.patients,
                 tableData = [];
     
