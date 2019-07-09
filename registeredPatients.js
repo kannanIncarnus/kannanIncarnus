@@ -30,7 +30,7 @@
                         "id": data[i]._id,
                         "PatientName": data[i].firstname,
                         "createdat": data[i].createdat,
-                        "regdatetime": data[i].regdatetime,
+                        "regdatetime": data[i].registereddate,
                         "hospital": data[i].hospital,
                         "hospitalunit": data[i].hospitalunit,
                         "mrn": data[i].mrn, //mm
@@ -44,9 +44,9 @@
                         "latitude": data[i].hosplatitude,
                         "longitude": data[i].hosplongitude,
                         "createdby": data[i].createdby,
-                        "createddatetime": data[i].createddatetime,
+                        "createddatetime": data[i].createdat,
                         "modifiedby": data[i].modifiedby,
-                        "modifieddatetime": data[i].modifieddatetime
+                        "modifieddatetime": data[i].modifiedat
                     });
                 }
         
