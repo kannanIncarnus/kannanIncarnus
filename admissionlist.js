@@ -102,7 +102,7 @@
                 alias: "DIDTRIAGE",
                 dataType: tableau.dataTypeEnum.string
             },{
-                id: "Readmission Date",
+                id: "ReadmissionDate",
                 alias: "Readmission Date",
                 dataType: tableau.dataTypeEnum.string
             },{
@@ -114,7 +114,7 @@
                 alias: "ReadmissionDepartment",
                 dataType: tableau.dataTypeEnum.string
             },{
-                id: "Admission Type",
+                id: "AdmissionType",
                 alias: "Admission Type",
                 dataType: tableau.dataTypeEnum.string
             }
