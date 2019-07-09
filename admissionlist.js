@@ -103,7 +103,7 @@
                 dataType: tableau.dataTypeEnum.string
             },{
                 id: "ReadmissionDate",
-                alias: "Readmission Date",
+                alias: "ReadmissionDate",
                 dataType: tableau.dataTypeEnum.string
             },{
                 id: "ReadmissionDoctor",
@@ -115,7 +115,7 @@
                 dataType: tableau.dataTypeEnum.string
             },{
                 id: "AdmissionType",
-                alias: "Admission Type",
+                alias: "AdmissionType",
                 dataType: tableau.dataTypeEnum.string
             }
         ];
