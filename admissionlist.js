@@ -89,7 +89,13 @@
             id: "modifiedby",
             alias: "modifiedby",
             dataType: tableau.dataTypeEnum.string
-            }, {
+            },
+            {
+                id: "modifieddatetime",
+                alias: "modifieddatetime",
+                dataType: tableau.dataTypeEnum.string
+                },
+            {
             id: "DIDTRIAGE",
             alias: "DIDTRIAGE",
             dataType: tableau.dataTypeEnum.string
