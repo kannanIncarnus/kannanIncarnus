@@ -18,29 +18,29 @@
         });
     });
 
-    myConnector.getData = function(table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/reportingservice/patientreports/getadmissionlist/2019-06-01/2019-07-04", function(resp) {
+    myConnector.getData = function (table, doneCallback) {
+        $.getJSON("https://demo.incarnus.com:8850/thirdparty/reportingservice/patientreports/getadmissionlist/2019-06-01/2019-07-04", function (resp) {
             var data = resp.admissionlist,
                 tableData = [];
-    
+
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
                     "ADMISSIONID": data[i]._id,
-                    "ADMISSIONDATETIME": data[i].admdate, //To Check
-                    "DischargeDateTime": data[i].medicaldischargedate,
-                    "DISCWARD": data[i].dischargeward, //To Check
-                    "OPVISITDATE": data[i].opdvisitdate,
+                    "ADMISSIONDATETIME": data[i].admitdate,
+                    "DischargeDateTime": data[i].dischargedate,
+                    "DISCWARD": data[i].ward,
+                    "OPVISITDATE": data[i].admitdate,
                     "FOLLOWUPDATE": data[i].followupdate, //To Check
-                    "BedName": data[i].bedname,
+                    "BedName": data[i].bed,
                     "createdby": data[i].createdby,
                     "createddatetime": data[i].createdat,
-                    "modifiedby": data[i].country,
+                    "modifiedby": data[i].modifiedby,
                     "modifieddatetime": data[i].modifiedat,
-                    "DIDTRIAGE": data[i].traige,
-                    "Readmission Date": data[i].readmdate,
-                    "ReadmissionDoctor": data[i].careprovidername,
-                    "ReadmissionDepartment": data[i].readmdepartment, //To Check
+                    "DIDTRIAGE": data[i].traige, //To Check
+                    "Readmission Date": data[i].readmitdate,
+                    "ReadmissionDoctor": data[i].careprovider,
+                    "ReadmissionDepartment": data[i].readmitdepartment, //To Check
                     "Admission Type": data[i].admtype //To Check
                 });
             }
@@ -48,78 +48,32 @@
             doneCallback();
         });
     };
-    
+
     myConnector.getSchema = function (schemaCallback) {
         var cols = [
             {
                 id: "ADMISSIONID",
                 dataType: tableau.dataTypeEnum.string
-                },
-            {
-            id: "ADMISSIONDATETIME",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id: "DischargeDateTime",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "DISCWARD",
-            alias: "DISCWARD",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "BedName",
-            alias: "BedName",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "OPVISITDATE",
-            alias: "OPVISITDATE",
-            dataType: tableau.dataTypeEnum.string
             },
             {
-            id:"FOLLOWUPDATE",
-            dataType: tableau.dataTypeEnum.string
-            },
-            {
-            id: "createdby",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "createddatetime",
-            alias: "createddatetime",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "modifiedby",
-            alias: "modifiedby",
-            dataType: tableau.dataTypeEnum.string
-            },
-            {
-                id: "modifieddatetime",
-                alias: "modifieddatetime",
+                id: "ADMISSIONDATETIME",
                 dataType: tableau.dataTypeEnum.string
-                },
-            {
-            id: "DIDTRIAGE",
-            alias: "DIDTRIAGE",
-            dataType: tableau.dataTypeEnum.string
             },
             {
-            id:"Readmission Date",
-            dataType: tableau.dataTypeEnum.string
+                id: "DischargeDateTime",
+                dataType: tableau.dataTypeEnum.string
             },{
-            id:"ReadmissionDoctor",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"ReadmissionDepartment",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"Admission Type",
-            dataType: tableau.dataTypeEnum.string}
+                id: "DISCWARD",
+                dataType: tableau.dataTypeEnum.string
+            }
         ];
-            
+
         var tableSchema = {
             id: "patientFeed",
             alias: "Patient reports are listed here...........",
             columns: cols
         };
-    
+
         schemaCallback([tableSchema]);
     };
 })();
