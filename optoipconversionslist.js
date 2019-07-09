@@ -26,10 +26,10 @@
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
-                    "Visit": data[i].entype,
-                    "VISITDATETIME": data[i].visitdate,
+                    "Visit": data[i].encounter,
+                    "VISITDATETIME": data[i].admitdate,
                     "HOSPITAL": data[i].hospital,  //to check
-                    "HOSPITALUNIT": data[i]._id, //to check
+                    "HOSPITALUNIT": data[i].hospitalunit,
                     "MRN": data[i].mrn,
                     "GENDER": data[i].gender,
                     "Age": data[i].age,
@@ -42,23 +42,23 @@
                     "DEPARTMENT": data[i].department,
                     "DOCTOR": data[i].careprovider,
                     "APPOINTMENTTYPE": data[i].apmttype,
-                    "Payor": data[i].payor,
-                    "CHECKINTIME": data[i]._id,
-                    "CHECKOUTTIME": data[i]._id,
-                    "CHIEFCOMPLAINT": data[i]._id,
-                    "REFSOURCE": data[i]._id,
-                    "REFSOURCENAME": data[i]._id,
-                    "CREATEDBY": data[i]._id,
+                    "Payor": data[i].payor2,
+                    "CHECKINTIME": data[i].admitdate,
+                    "CHECKOUTTIME": data[i].dischargedate,
+                    "CHIEFCOMPLAINT": "",
+                    "REFSOURCE": "",
+                    "REFSOURCENAME": "",
+                    "CREATEDBY": data[i].createdby,
                     "CREATEDDATETIME": data[i].createdat,
-                    "MODIFIEDBY": data[i]._id,
+                    "MODIFIEDBY": data[i].modifiedby,
                     "MODIFIEDDATETIME": data[i].modifiedat,
-                    "Episode Type": data[i]._id,
-                    "Following Episode Type": data[i]._id,
-                    "Admission Visit ID": data[i]._id,
-                    "Admissiondatetime": data[i]._id,
-                    "AdmissionDoctor": data[i]._id,
+                    "Episode Type": "",
+                    "Following Episode Type": "",
+                    "Admission Visit ID": data[i].patientvisituid,
+                    "Admissiondatetime": data[i].admitdate,
+                    "AdmissionDoctor": data[i].careprovider,
                     "VisitID": data[i].visitid,
-                    "AdmissionDepartment": data[i]._id,
+                    "AdmissionDepartment": data[i].department,
                     });                    
             }
             table.appendRows(tableData);
@@ -70,118 +70,6 @@
         var cols = [
             {
             id: "Visit",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id: "VisitID",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-             id: "VISITDATETIME",
-            alias: "VISITDATETIME",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "HOSPITAL",
-            alias: "HOSPITAL",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "HOSPITALUNIT",
-            alias: "HOSPITALUNIT",
-            dataType: tableau.dataTypeEnum.string
-            },
-            {
-           id:"MRN",
-           dataType: tableau.dataTypeEnum.string
-            },
-            {
-            id: "GENDER",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "Age",
-            alias: "age",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "PATIENTTYPE",
-            alias: "PATIENTTYPE",
-            dataType: tableau.dataTypeEnum.string
-            }, {
-            id: "COUNTRY",
-            alias: "COUNTRY",
-            dataType: tableau.dataTypeEnum.string
-            },
-            {
-            id:"STATE",
-            dataType: tableau.dataTypeEnum.string
-             },{
-            id:"CITY",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"PLACE",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"PINCODE",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"DEPARTMENT",
-            dataType: tableau.dataTypeEnum.string
-             },{
-            id:"DOCTOR",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"VisitType",
-            dataType: tableau.dataTypeEnum.string},
-             ,{
-             id:"APPOINTMENTTYPE",
-             dataType: tableau.dataTypeEnum.string},
-             {
-             id: "Payor",
-            alias: "Payor",
-            dataType: tableau.dataTypeEnum.string
-            },
-            {
-            id:"CHECKINTIME",
-            dataType: tableau.dataTypeEnum.string
-                },{
-            id:"CHECKOUTTIME",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"CHIEFCOMPLAINT",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"REFSOURCE",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"REFSOURCENAME",
-            dataType: tableau.dataTypeEnum.string
-                },{
-            id:"CREATEDBY",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"CREATEDDATETIME",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"MODIFIEDBY",
-            dataType: tableau.dataTypeEnum.string},
-             {
-            id: "MODIFIEDDATETIME",
-            alias: "MODIFIEDDATETIME",
-            dataType: tableau.dataTypeEnum.string
-            },
-            {
-            id:"EpisodeType",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"FollowingEpisodeType",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"AdmissionVisitID",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"Admissiondatetime",
-            dataType: tableau.dataTypeEnum.string},
-            {
-            id:"AdmissionDoctor",
-            dataType: tableau.dataTypeEnum.string
-            },{
-            id:"AdmissionDepartment",
             dataType: tableau.dataTypeEnum.string
             }
             ];
