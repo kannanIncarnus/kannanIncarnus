@@ -76,7 +76,7 @@
             dataType: tableau.dataTypeEnum.string
             }, {
              id: "VISITDATETIME",
-            alias: "VISI TDATE TIME",
+            alias: "VISITDATETIME",
             dataType: tableau.dataTypeEnum.string
             }, {
             id: "HOSPITAL",
@@ -84,7 +84,7 @@
             dataType: tableau.dataTypeEnum.string
             }, {
             id: "HOSPITALUNIT",
-            alias: "HOSPITAL UNIT",
+            alias: "HOSPITALUNIT",
             dataType: tableau.dataTypeEnum.string
             },
             {
@@ -100,7 +100,7 @@
             dataType: tableau.dataTypeEnum.string
             }, {
             id: "PATIENTTYPE",
-            alias: "PATIENT TYPE",
+            alias: "PATIENTTYPE",
             dataType: tableau.dataTypeEnum.string
             }, {
             id: "COUNTRY",
@@ -162,17 +162,17 @@
             dataType: tableau.dataTypeEnum.string},
              {
             id: "MODIFIEDDATETIME",
-            alias: "MODIFIED DATE TIME",
+            alias: "MODIFIEDDATETIME",
             dataType: tableau.dataTypeEnum.string
             },
             {
-            id:"Episode Type",
+            id:"EpisodeType",
             dataType: tableau.dataTypeEnum.string
             },{
-            id:"Following Episode Type",
+            id:"FollowingEpisodeType",
             dataType: tableau.dataTypeEnum.string
             },{
-            id:"Admission Visit ID",
+            id:"AdmissionVisitID",
             dataType: tableau.dataTypeEnum.string},
             {
             id:"Admissiondatetime",
