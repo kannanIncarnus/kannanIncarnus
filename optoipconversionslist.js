@@ -71,7 +71,80 @@
             {
             id: "Visit",
             dataType: tableau.dataTypeEnum.string
-            }
+            },{
+            id: "VisitID",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+             id: "VISITDATETIME",
+            alias: "VISITDATETIME",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "HOSPITAL",
+            alias: "HOSPITAL",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "HOSPITALUNIT",
+            alias: "HOSPITALUNIT",
+            dataType: tableau.dataTypeEnum.string
+            },
+            {
+           id:"MRN",
+           dataType: tableau.dataTypeEnum.string
+            },
+            {
+            id: "GENDER",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "Age",
+            alias: "age",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "PATIENTTYPE",
+            alias: "PATIENTTYPE",
+            dataType: tableau.dataTypeEnum.string
+            }, {
+            id: "COUNTRY",
+            alias: "COUNTRY",
+            dataType: tableau.dataTypeEnum.string
+            },
+            {
+            id:"STATE",
+            dataType: tableau.dataTypeEnum.string
+             },{
+            id:"CITY",
+            dataType: tableau.dataTypeEnum.string
+            },{
+            id:"PLACE",
+            dataType: tableau.dataTypeEnum.string},
+            {
+            id:"PINCODE",
+            dataType: tableau.dataTypeEnum.string},
+            {
+            id:"DEPARTMENT",
+            dataType: tableau.dataTypeEnum.string
+             },{
+            id:"DOCTOR",
+            dataType: tableau.dataTypeEnum.string
+            },{
+            id:"VisitType",
+            dataType: tableau.dataTypeEnum.string},
+             ,{
+             id:"APPOINTMENTTYPE",
+             dataType: tableau.dataTypeEnum.string},
+             {
+             id: "Payor",
+            alias: "Payor",
+            dataType: tableau.dataTypeEnum.string
+            },
+            {
+            id:"CHECKINTIME",
+            dataType: tableau.dataTypeEnum.string
+                },{
+            id:"CHECKOUTTIME",
+            dataType: tableau.dataTypeEnum.string
+            },{
+            id:"CHIEFCOMPLAINT",
+            dataType: tableau.dataTypeEnum.string}
             ];
     
         var tableSchema = {
