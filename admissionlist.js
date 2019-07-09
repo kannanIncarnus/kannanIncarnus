@@ -32,6 +32,7 @@
                     "DISCWARD": data[i].dischargeward, //To Check
                     "OPVISITDATE": data[i].opdvisitdate,
                     "FOLLOWUPDATE": data[i].followupdate, //To Check
+                    "BedName": data[i].bedname,
                     "createdby": data[i].createdby,
                     "createddatetime": data[i].createdat,
                     "modifiedby": data[i].country,
