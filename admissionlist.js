@@ -53,17 +53,69 @@
         var cols = [
             {
                 id: "ADMISSIONID",
+                alias: "ADMISSIONID",
                 dataType: tableau.dataTypeEnum.string
             },
             {
                 id: "ADMISSIONDATETIME",
+                alias: "ADMISSIONDATETIME",
                 dataType: tableau.dataTypeEnum.string
             },
             {
                 id: "DischargeDateTime",
+                alias: "DischargeDateTime",
                 dataType: tableau.dataTypeEnum.string
             },{
                 id: "DISCWARD",
+                alias: "DISCWARD",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "OPVISITDATE",
+                alias: "OPVISITDATE",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "FOLLOWUPDATE",
+                alias: "FOLLOWUPDATE",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "BedName",
+                alias: "BedName",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "createdby",
+                alias: "createdby",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "createddatetime",
+                alias: "createddatetime",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "modifiedby",
+                alias: "modifiedby",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "modifieddatetime",
+                alias: "modifieddatetime",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "DIDTRIAGE",
+                alias: "DIDTRIAGE",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "Readmission Date",
+                alias: "Readmission Date",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "ReadmissionDoctor",
+                alias: "ReadmissionDoctor",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "ReadmissionDepartment",
+                alias: "ReadmissionDepartment",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "Admission Type",
+                alias: "Admission Type",
                 dataType: tableau.dataTypeEnum.string
             }
         ];
