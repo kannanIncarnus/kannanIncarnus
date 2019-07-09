@@ -26,8 +26,8 @@
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
                     tableData.push({
-                        "regid": data[i]._id,
-                        "id": data[i].regid,
+                        "regid": data[i].regid,
+                        "id": data[i]._id,
                         "PatientName": data[i].firstname,
                         "createdat": data[i].createdat,
                         "regdatetime": data[i].regdatetime,
