@@ -51,6 +51,10 @@
     myConnector.getSchema = function (schemaCallback) {
         var cols = [
             {
+                id: "ADMISSIONID",
+                dataType: tableau.dataTypeEnum.string
+                },
+            {
             id: "ADMISSIONDATETIME",
             dataType: tableau.dataTypeEnum.string
             },{
