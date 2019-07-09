@@ -203,6 +203,41 @@
                 id: "MODIFIEDDATETIME",
                 alias: "MODIFIEDDATETIME",
                 dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "EpisodeType",
+                alias: "EpisodeType",
+                dataType: tableau.dataTypeEnum.string
+            } ,
+            {
+                id: "FollowingEpisodeType",
+                alias: "FollowingEpisodeType",
+                dataType: tableau.dataTypeEnum.string
+            } ,
+            {
+                id: "AdmissionVisitID",
+                alias: "AdmissionVisitID",
+                dataType: tableau.dataTypeEnum.string
+            } ,
+            {
+                id: "Admissiondatetime",
+                alias: "Admissiondatetime",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "AdmissionDoctor",
+                alias: "AdmissionDoctor",
+                dataType: tableau.dataTypeEnum.string
+            } ,
+            {
+                id: "VisitID",
+                alias: "VisitID",
+                dataType: tableau.dataTypeEnum.string
+            } ,
+            {
+                id: "AdmissionDepartment",
+                alias: "AdmissionDepartment",
+                dataType: tableau.dataTypeEnum.string
             }
             ];
     
