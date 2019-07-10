@@ -81,7 +81,7 @@
                 dataType: tableau.dataTypeEnum.string
             },
             {
-                id:"registereddate",
+                id:"regdatetime",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "patienttype",
