@@ -76,6 +76,10 @@
                 alias: "gender",
                 dataType: tableau.dataTypeEnum.string
             }, {
+                id: "agegroup",
+                alias: "agegroup",
+                dataType: tableau.dataTypeEnum.string
+            }, {
                 id: "mrn",
                 alias: "mrn",
                 dataType: tableau.dataTypeEnum.string
