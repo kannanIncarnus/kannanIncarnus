@@ -36,6 +36,7 @@
                         "mrn": data[i].mm, //mm
                         "gender": data[i].gender,
                         "agegroup": data[i].agegroup,
+                        "age": data[i].age,
                         "patienttype": data[i].patienttype,
                         "country": data[i].country,
                         "state": data[i].state,
@@ -78,6 +79,10 @@
             }, {
                 id: "agegroup",
                 alias: "agegroup",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "age",
+                alias: "age",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "mrn",
