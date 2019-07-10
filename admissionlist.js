@@ -30,7 +30,7 @@
                     "ADMISSIONDATETIME": data[i].admitdate,
                     "DischargeDateTime": data[i].dischargedate,
                     "DISCWARD": data[i].ward,
-                    "OPVISITDATE": data[i].admitdate,
+                    "OPVISITDATE": data[i].regdatetime,
                     "FOLLOWUPDATE": data[i].followupdate, //To Check
                     "BedName": data[i].bed,
                     "createdby": data[i].createdby,
