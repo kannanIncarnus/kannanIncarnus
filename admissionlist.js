@@ -28,6 +28,17 @@
                 tableData.push({
                     "ADMISSIONID": data[i]._id,
                     "ADMISSIONDATETIME": data[i].admitdate,
+                    "hospital": data[i].hospital,
+                    "hospitalunit": data[i].hospitalunit,
+                    "mrn": data[i].mrn, //mm
+                    "gender": data[i].gender,
+                    "agegroup": data[i].agegroup,
+                    "age": data[i].age,
+                    "patienttype": data[i].patienttype,
+                    "country": data[i].country,
+                    "state": data[i].state,
+                    "city": data[i].city,
+                    "pincode": data[i].zipcode,
                     "DischargeDateTime": data[i].dischargedate,
                     "DISCWARD": data[i].ward,
                     "OPVISITDATE": data[i].regdatetime,
@@ -59,6 +70,30 @@
             {
                 id: "ADMISSIONDATETIME",
                 alias: "ADMISSIONDATETIME",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "mrn",
+                alias: "mrn",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "patienttype",
+                alias: "patienttype",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "country",
+                alias: "country",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "state",
+                alias: "state",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "city",
+                alias: "city",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "pincode",
+                alias: "pincode",
                 dataType: tableau.dataTypeEnum.string
             },
             {

@@ -112,7 +112,7 @@
                 id: "pincode",
                 alias: "pincode",
                 dataType: tableau.dataTypeEnum.string
-            }, 
+            },  
             {
                 id: "createddatetime",
                 alias: "createddatetime",

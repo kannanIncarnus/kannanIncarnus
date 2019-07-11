@@ -20,33 +20,55 @@
 
     myConnector.getData = function(table, doneCallback) {
         $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/newbornlist/2019-06-01/2019-07-04", function(resp) {
-            var data = resp.patients,
+            var data = resp.newbornlist,
                 tableData = [];
 
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
-                    "regid": data[i].regid,
-                    "id": data[i]._id,
-                    "PatientName": data[i].firstname,
-                    "createdat": data[i].createdat,
-                    "regdatetime": data[i].registereddate,
-                    "hospital": data[i].hospital,
-                    "hospitalunit": data[i].hospitalunit,
-                    "mrn": data[i].mrn, //mm
-                    "gender": data[i].gender,
-                    "agegroup": data[i].agegroup,
-                    "patienttype": data[i].patienttype,
-                    "country": data[i].country,
-                    "state": data[i].state,
-                    "city": data[i].city,
-                    "pincode": data[i].zipcode,
-                    "latitude": data[i].hosplatitude,
-                    "longitude": data[i].hosplongitude,
-                    "createdby": data[i].createdby,
-                    "createddatetime": data[i].createdat,
-                    "modifiedby": data[i].modifiedby,
-                    "modifieddatetime": data[i].modifiedat
+                    "ADMISSIONID": data[i].regid,
+                    "ADMISSIONDATETIME": data[i].regid,
+                    "HOSPITAL": data[i].regid,
+                    "HOSPITALUNIT": data[i].regid,
+                    "MRN": data[i].regid,
+                    "GENDER": data[i].regid,
+                    "TIMEOFBIRTH": data[i].regid,
+                    "PATIENTTYPE": data[i].regid,
+                    "COUNTRY": data[i].regid,
+                    "COUNTRY": data[i].regid,
+                    "COUNTRY": data[i].regid,
+                    "COUNTRY": data[i].regid,
+                    "COUNTRY": data[i].regid,
+                    "COUNTRY": data[i].regid,
+                    "COUNTRY": data[i].regid,
+
+
+
+
+
+
+
+
+STATE
+CITY
+PLACE
+PINCODE
+ADMITDEPARTMENT
+ADMITDOCTOR
+ADMISSIONTYPE
+WARD
+BED
+MOTHERNAME
+TYPEOFDELIVERY
+EXPECTEDDATEOFDELIVERY (EDD)
+OBSTETRICIAN
+CONDITIONOFBABY
+APGARSCORE
+PEDIATRICIAN
+CREATEDBY
+CREATEDDATETIME
+MODIFIEDBY
+MODIFIEDDATETIME
                 });
             }
     
@@ -58,68 +80,6 @@
     myConnector.getSchema = function (schemaCallback) {
         var cols = [{
             id: "regid",
-            dataType: tableau.dataTypeEnum.string
-        },
-            {
-            id: "id",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "PatientName",
-            alias: "Patient Name",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "createdat",
-            alias: "createdat",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "gender",
-            alias: "gender",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "mrn",
-            alias: "mrn",
-            dataType: tableau.dataTypeEnum.string
-        },
-        {
-            id:"registereddate",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "patienttype",
-            alias: "patienttype",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "country",
-            alias: "country",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "state",
-            alias: "state",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "city",
-            alias: "city",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "pincode",
-            alias: "pincode",
-            dataType: tableau.dataTypeEnum.string
-        }, 
-        {
-            id: "createddatetime",
-            alias: "createddatetime",
-            dataType: tableau.dataTypeEnum.string
-        }, 
-        {
-            id: "createdby",
-            alias: "createdby",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "modifiedby",
-            alias: "modifiedby",
-            dataType: tableau.dataTypeEnum.string
-        }, {
-            id: "modifieddatetime",
-            alias: "modifieddatetime",
             dataType: tableau.dataTypeEnum.string
         }
     ];
