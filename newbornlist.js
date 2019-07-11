@@ -26,49 +26,35 @@
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
-                    "ADMISSIONID": data[i].regid,
-                    "ADMISSIONDATETIME": data[i].regid,
-                    "HOSPITAL": data[i].regid,
-                    "HOSPITALUNIT": data[i].regid,
-                    "MRN": data[i].regid,
-                    "GENDER": data[i].regid,
-                    "TIMEOFBIRTH": data[i].regid,
-                    "PATIENTTYPE": data[i].regid,
-                    "COUNTRY": data[i].regid,
-                    "COUNTRY": data[i].regid,
-                    "COUNTRY": data[i].regid,
-                    "COUNTRY": data[i].regid,
-                    "COUNTRY": data[i].regid,
-                    "COUNTRY": data[i].regid,
-                    "COUNTRY": data[i].regid,
-
-
-
-
-
-
-
-
-STATE
-CITY
-PLACE
-PINCODE
-ADMITDEPARTMENT
-ADMITDOCTOR
-ADMISSIONTYPE
-WARD
-BED
-MOTHERNAME
-TYPEOFDELIVERY
-EXPECTEDDATEOFDELIVERY (EDD)
-OBSTETRICIAN
-CONDITIONOFBABY
-APGARSCORE
-PEDIATRICIAN
-CREATEDBY
-CREATEDDATETIME
-MODIFIEDBY
-MODIFIEDDATETIME
+                    "ADMISSIONID": data[i]._id,
+                    "ADMISSIONDATETIME": data[i].admitdate,
+                    "HOSPITAL": data[i].hospital,
+                    "HOSPITALUNIT": data[i].hospitalunit,
+                    "MRN": data[i].mrn,
+                    "GENDER": data[i].gender,
+                    "TIMEOFBIRTH": data[i].id,
+                    "PATIENTTYPE": data[i].patienttype,
+                    "STATE":data[i].state,
+                    "CITY":data[i].city,
+                    "PLACE":data[i].area,
+                    "PINCODE":data[i].pincode,
+                    "COUNTRY":data[i].country,
+                    "ADMITDEPARTMENT": data[i].department,
+                    "ADMITDOCTOR": data[i].careprovider,
+                    "ADMISSIONTYPE": data[i].admtype,
+                    "WARD": data[i].ward,
+                    "BED": data[i].bed,
+                    "MOTHERNAME": data[i].mothername,
+                    "TYPEOFDELIVERY": data[i].deliverytype,
+                    "EXPECTEDDATEOFDELIVERY(EDD)": data[i].EDD,
+                    "OBSTETRICIAN": data[i].obsterician,
+                    "CONDITIONOFBABY": data[i].condition,
+                    "APGARSCORE": data[i].apgarscore,
+                    "PEDIATRICIAN": data[i].pediatrician,
+                    "CREATEDBY": data[i].createdby,
+                    "CREATEDDATETIME": data[i].regid,
+                    "MODIFIEDBY": data[i].modifiedby,
+                    "MODIFIEDDATETIME": data[i].modifiedat
                 });
             }
     
