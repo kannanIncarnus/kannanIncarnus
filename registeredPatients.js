@@ -84,7 +84,7 @@
             }, {
                 id: "age",
                 alias: "age",
-                dataType: tableau.dataTypeEnum.number
+                dataType: tableau.dataTypeEnum.string
             }, {
                 id: "mrn",
                 alias: "mrn",
