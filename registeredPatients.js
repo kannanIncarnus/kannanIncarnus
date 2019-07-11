@@ -1,6 +1,4 @@
 
-{/* <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script> */}
-
 (function () {
         var myConnector = tableau.makeConnector();
 
@@ -26,19 +24,19 @@
                 var data = resp.registeredpatients,
                     tableData = [];
             // instantiate a moment object
-            var nowMoment = moment();
+            // var nowMoment = moment();
 
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
-                    var dateFormat = "yyyy-MM-dd HH:mm:ss";
+                    // var dateFormat = "yyyy-MM-dd HH:mm:ss";
  
-                        var regDate = nowMoment(data[i].regdatetime).format(dateFormat);
+                    //     var regDate = nowMoment(data[i].regdatetime).format(dateFormat);
                     tableData.push({
                         "regid": data[i].regid,
                         "id": data[i]._id,
                         "PatientName": data[i].firstname,
                         "createdat": data[i].createdat,
-                        "regdatetime": regDate,
+                        "regdatetime": data[i].regdatetime,
                         "hospital": data[i].hospital,
                         "hospitalunit": data[i].hospitalunit,
                         "mrn": data[i].mm, //mm
