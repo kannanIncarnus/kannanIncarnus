@@ -70,7 +70,7 @@
             {
                 id: "ADMISSIONDATETIME",
                 alias: "ADMISSIONDATETIME",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             }, {
                 id: "mrn",
                 alias: "mrn",
@@ -99,7 +99,7 @@
             {
                 id: "DischargeDateTime",
                 alias: "DischargeDateTime",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             },{
                 id: "DISCWARD",
                 alias: "DISCWARD",
