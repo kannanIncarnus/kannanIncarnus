@@ -35,9 +35,9 @@
                     "agegroup": data[i].agegroup,
                     "age": data[i].age,
                     "patienttype": data[i].patienttype,
-                    "country": data[i].country,
-                    "state": data[i].state,
-                    "city": data[i].city,
+                    "country1": data[i].country,
+                    "state1": data[i].state,
+                    "city1": data[i].city,
                     "pincode": data[i].zipcode,
                     "DischargeDateTime": data[i].dischargedate,
                     "DISCWARD": data[i].ward,
@@ -80,16 +80,16 @@
                 alias: "patienttype",
                 dataType: tableau.dataTypeEnum.string
             }, {
-                id: "country",
-                alias: "country",
+                id: "country1",
+                alias: "country1",
                 dataType: tableau.dataTypeEnum.string
             }, {
-                id: "state",
-                alias: "state",
+                id: "state1",
+                alias: "state1",
                 dataType: tableau.dataTypeEnum.string
             }, {
-                id: "city",
-                alias: "city",
+                id: "city1",
+                alias: "city1",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "pincode",
