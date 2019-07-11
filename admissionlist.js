@@ -70,7 +70,7 @@
             {
                 id: "ADMISSIONDATETIME",
                 alias: "ADMISSIONDATETIME",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             },
             {
                 id: "hospital",
@@ -96,7 +96,7 @@
             }, {
                 id: "age",
                 alias: "age",
-                dataType: tableau.dataTypeEnum.number
+                dataType: tableau.dataTypeEnum.string
             }, {
                 id: "patienttype",
                 alias: "patienttype",
@@ -121,7 +121,7 @@
             {
                 id: "DischargeDateTime",
                 alias: "DischargeDateTime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             },{
                 id: "DISCWARD",
                 alias: "DISCWARD",
@@ -129,7 +129,7 @@
             },{
                 id: "OPVISITDATE",
                 alias: "OPVISITDATE",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             },{
                 id: "FOLLOWUPDATE",
                 alias: "FOLLOWUPDATE",
@@ -145,7 +145,7 @@
             },{
                 id: "createddatetime",
                 alias: "createddatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             },{
                 id: "modifiedby",
                 alias: "modifiedby",
@@ -161,7 +161,7 @@
             },{
                 id: "ReadmissionDate",
                 alias: "ReadmissionDate",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             },{
                 id: "ReadmissionDoctor",
                 alias: "ReadmissionDoctor",
