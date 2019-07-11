@@ -30,7 +30,7 @@
                     "ADMISSIONDATETIME": data[i].admitdate,
                     "hospital": data[i].hospital,
                     "hospitalunit": data[i].hospitalunit,
-                    "mrn": data[i].mrn,
+                    "mrn": data[i].mrn, //mm
                     "gender": data[i].gender,
                     "agegroup": data[i].agegroup,
                     "age": data[i].age,
@@ -70,7 +70,7 @@
             {
                 id: "ADMISSIONDATETIME",
                 alias: "ADMISSIONDATETIME",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             },
             {
                 id: "hospital",
@@ -80,23 +80,11 @@
             {
                 id: "hospitalunit",
                 alias: "hospitalunit",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             }, {
                 id: "mrn",
                 alias: "mrn",
                 dataType: tableau.dataTypeEnum.string
-            }, {
-                id: "gender",
-                alias: "gender",
-                dataType: tableau.dataTypeEnum.string
-            }, {
-                id: "agegroup",
-                alias: "agegroup",
-                dataType: tableau.dataTypeEnum.string
-            }, {
-                id: "age",
-                alias: "age",
-                dataType: tableau.dataTypeEnum.number
             }, {
                 id: "patienttype",
                 alias: "patienttype",
@@ -153,7 +141,7 @@
             },{
                 id: "modifieddatetime",
                 alias: "modifieddatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             },{
                 id: "DIDTRIAGE",
                 alias: "DIDTRIAGE",
