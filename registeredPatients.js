@@ -1,27 +1,27 @@
-    (function () {
-        var myConnector = tableau.makeConnector();
+(function () {
+    var myConnector = tableau.makeConnector();
 
-        myConnector.getSchema = function (schemaCallback) {
+    myConnector.getSchema = function (schemaCallback) {
 
-        };
+    };
 
-        myConnector.getData = function (table, doneCallback) {
+    myConnector.getData = function (table, doneCallback) {
 
-        };
+    };
 
-        tableau.registerConnector(myConnector);
+    tableau.registerConnector(myConnector);
 
-        $(document).ready(function () {
-            $("#submitButton").click(function () {
-                tableau.connectionName = "Patient Reports";
-                tableau.submit();
-            });
+    $(document).ready(function () {
+        $("#submitButton").click(function () {
+            tableau.connectionName = "Registeredpatients List";
+            tableau.submit();
         });
+    });
 
-        myConnector.getData = function(table, doneCallback) {
-            $.getJSON("https://demo.incarnus.com:8850/thirdparty/reportingservice/patientreports/getregisteredpatients/2019-06-01/2019-07-04", function(resp) {
-                var data = resp.registeredpatients,
-                    tableData = [];
+    myConnector.getData = function (table, doneCallback) {
+        $.getJSON("https://demo.incarnus.com:8850/thirdparty/reportingservice/patientreports/getregisteredpatients/2019-06-01/2019-07-04", function (resp) {
+            var data = resp.registeredpatients,
+                tableData = [];
 
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
