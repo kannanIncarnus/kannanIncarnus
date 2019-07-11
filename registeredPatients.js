@@ -1,4 +1,4 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
+<html><script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></script>
 
 (function () {
         var myConnector = tableau.makeConnector();
@@ -149,3 +149,4 @@
             schemaCallback([tableSchema]);
         };
     })();
+</html>
