@@ -1,6 +1,4 @@
-<link src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js" type="text/javascript"></link>
-
-(function () {
+    (function () {
         var myConnector = tableau.makeConnector();
 
         myConnector.getSchema = function (schemaCallback) {
@@ -24,14 +22,12 @@
             $.getJSON("https://demo.incarnus.com:8850/thirdparty/reportingservice/patientreports/getregisteredpatients/2019-06-01/2019-07-04", function(resp) {
                 var data = resp.registeredpatients,
                     tableData = [];
-            // instantiate a moment object
-            var dateObj = moment();
 
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
                     var dateFormat = "yyyy-MM-dd HH:mm:ss";
  
-                        var regDate = dateObj(data[i].regdatetime).format(dateFormat);
+                    var regDate = moment(data[i].regdatetime).format(dateFormat);
                     tableData.push({
                         "regid": data[i].regid,
                         "id": data[i]._id,
