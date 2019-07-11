@@ -71,10 +71,28 @@
                 id: "ADMISSIONDATETIME",
                 alias: "ADMISSIONDATETIME",
                 dataType: tableau.dataTypeEnum.datetime
+            },
+            {
+                id: "hospital",
+                alias: "hospital",
+                dataType: tableau.dataTypeEnum.datetime
+            },
+            {
+                id: "hospitalunit",
+                alias: "hospitalunit",
+                dataType: tableau.dataTypeEnum.datetime
             }, {
                 id: "mrn",
                 alias: "mrn",
                 dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "agegroup",
+                alias: "agegroup",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "age",
+                alias: "age",
+                dataType: tableau.dataTypeEnum.number
             }, {
                 id: "patienttype",
                 alias: "patienttype",
