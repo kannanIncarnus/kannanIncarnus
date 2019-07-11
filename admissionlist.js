@@ -30,7 +30,7 @@
                     "ADMISSIONDATETIME": data[i].admitdate,
                     "hospital": data[i].hospital,
                     "hospitalunit": data[i].hospitalunit,
-                    "mrn": data[i].mrn, //mm
+                    "mrn": data[i].mrn,
                     "gender": data[i].gender,
                     "agegroup": data[i].agegroup,
                     "age": data[i].age,
@@ -84,6 +84,10 @@
             }, {
                 id: "mrn",
                 alias: "mrn",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "gender",
+                alias: "gender",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "agegroup",
