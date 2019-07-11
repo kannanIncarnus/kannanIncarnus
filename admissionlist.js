@@ -75,12 +75,12 @@
             {
                 id: "hospital",
                 alias: "hospital",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             },
             {
                 id: "hospitalunit",
                 alias: "hospitalunit",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.string
             }, {
                 id: "mrn",
                 alias: "mrn",
