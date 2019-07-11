@@ -75,7 +75,7 @@
             {
                 id: "VISITDATETIME",
                 alias: "VISITDATETIME",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             },
             {
                 id: "HOSPITAL",
@@ -222,7 +222,7 @@
             {
                 id: "Admissiondatetime",
                 alias: "Admissiondatetime",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             },
             {
                 id: "AdmissionDoctor",

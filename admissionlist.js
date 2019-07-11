@@ -107,7 +107,7 @@
             },{
                 id: "OPVISITDATE",
                 alias: "OPVISITDATE",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             },{
                 id: "FOLLOWUPDATE",
                 alias: "FOLLOWUPDATE",
@@ -123,7 +123,7 @@
             },{
                 id: "createddatetime",
                 alias: "createddatetime",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             },{
                 id: "modifiedby",
                 alias: "modifiedby",
@@ -139,7 +139,7 @@
             },{
                 id: "ReadmissionDate",
                 alias: "ReadmissionDate",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             },{
                 id: "ReadmissionDoctor",
                 alias: "ReadmissionDoctor",
