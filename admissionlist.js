@@ -30,7 +30,7 @@
                     "ADMISSIONDATETIME": data[i].admitdate,
                     "hospital": data[i].hospital,
                     "hospitalunit": data[i].hospitalunit,
-                    "mrn": data[i].mrn, //mm
+                    "mrn": data[i].mrn,
                     "gender": data[i].gender,
                     "agegroup": data[i].agegroup,
                     "age": data[i].age,
@@ -48,10 +48,10 @@
                     "createddatetime": data[i].createdat,
                     "modifiedby": data[i].modifiedby,
                     "modifieddatetime": data[i].modifiedat,
-                    "DIDTRIAGE": data[i].triage, //To Check
-                    "Readmission Date": data[i].readmitdate,
+                    "DIDTRIAGE": data[i].triage,
+                    "Readmission Date": data[i].admitdate,
                     "ReadmissionDoctor": data[i].careprovider,
-                    "ReadmissionDepartment": data[i].readmitdepartment, //To Check
+                    "ReadmissionDepartment": data[i].department,
                     "Admission Type": data[i].admtype //To Check
                 });
             }
