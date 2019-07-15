@@ -24,7 +24,7 @@
             var data = resp.registeredpatients,
                 tableData = [];
                 totalRecords = totalRecords + 100
-                
+
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
                     
@@ -57,6 +57,7 @@
                 table.appendRows(tableData);
                 console.log("totalRecords: " + totalRecords);
                 if (totalRecords < 400) {
+                 console.log("fetching Again: " + totalRecords);
                     myConnector.getData = function (table, doneCallback) {
 
                     };
