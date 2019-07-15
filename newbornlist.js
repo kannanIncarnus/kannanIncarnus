@@ -65,14 +65,130 @@
     
     myConnector.getSchema = function (schemaCallback) {
         var cols = [{
-            id: "regid",
+            id: "ADMISSIONID",
             dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "ADMISSIONDATETIME",
+            dataType: tableau.dataTypeEnum.datetime
+        },
+        {
+            id: "HOSPITAL",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "HOSPITALUNIT",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "MRN",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "GENDER",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "TIMEOFBIRTH",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "PATIENTTYPE",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "STATE",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "CITY",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "PLACE",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "PINCODE",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "COUNTRY",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "ADMITDEPARTMENT",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "ADMITDOCTOR",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "ADMISSIONTYPE",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "WARD",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "BED",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "MOTHERNAME",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "TYPEOFDELIVERY",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "EXPECTEDDATEOFDELIVERY(EDD)",
+            dataType: tableau.dataTypeEnum.datetime
+        },
+        {
+            id: "EXPECTEDDATEOFDELIVERY(EDD)",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "OBSTETRICIAN",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "CONDITIONOFBABY",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "APGARSCORE",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "PEDIATRICIAN",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "CREATEDBY",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "CREATEDDATETIME",
+            dataType: tableau.dataTypeEnum.datetime
+        },
+        {
+            id: "MODIFIEDBY",
+            dataType: tableau.dataTypeEnum.string
+        },
+        {
+            id: "MODIFIEDDATETIME",
+            dataType: tableau.dataTypeEnum.datetime
         }
     ];
     
         var tableSchema = {
-            id: "patientFeed",
-            alias: "Patient reports are listed here...........",
+            id: "Newborn List",
+            alias: "Newborn reports are listed here...........",
             columns: cols
         };
     
