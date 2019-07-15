@@ -28,6 +28,8 @@
                 tableData.push({
                     "ADMISSIONID": data[i]._id,
                     "ADMISSIONDATETIME": data[i].admitdate,
+                    "ADMITDEPARTMENT": data[i].department,
+                    "ADMITDOCTOR": data[i].careprovider,
                     "hospital": data[i].hospital,
                     "hospitalunit": data[i].hospitalunit,
                     "mrn": data[i].mrn,
@@ -71,6 +73,16 @@
                 id: "ADMISSIONDATETIME",
                 alias: "ADMISSIONDATETIME",
                 dataType: tableau.dataTypeEnum.datetime
+            },
+            {
+                id: "ADMITDEPARTMENT",
+                alias: "ADMITDEPARTMENT",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "ADMITDOCTOR",
+                alias: "ADMITDOCTOR",
+                dataType: tableau.dataTypeEnum.string
             },
             {
                 id: "hospital",
