@@ -61,10 +61,10 @@
                     myConnector.getData = function (table, doneCallback) {
 
                     };
-                    return
                 }
-                // console.log("tableData: " + tableData.count);
-                doneCallback();
+                else {
+                    doneCallback();
+                }
             });
         };
         
