@@ -53,6 +53,7 @@
                     });
                 }
         
+                console.log("check it: " + tableData.count);
                 if (tableData.count < totalRecords) {
                      console.log("fetching Again: " + totalRecords);
                     myConnector.getData = function (table, doneCallback) {
