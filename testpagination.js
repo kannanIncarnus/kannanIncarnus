@@ -1,12 +1,13 @@
 (function () {
     var myConnector = tableau.makeConnector();
+    var totalRecords = 400;
 
     myConnector.getSchema = function (schemaCallback) {
 
     };
 
     myConnector.getData = function (table, doneCallback) {
-
+        tableData = [];
     };
 
     tableau.registerConnector(myConnector);
@@ -19,13 +20,10 @@
     });
 
     myConnector.getData = function (table, doneCallback) {
-        var pageNumber = 1;
-        console.log("Pagenumber: " + pageNumber);
         $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatients/2019-06-01/2019-07-04", function (resp) {
             var data = resp.registeredpatients,
-                tableData = [];
 
-                pageNumber = pageNumber + 1
+                totalRecords = totalRecords + 100
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
                     
@@ -56,13 +54,14 @@
                 }
         
                 table.appendRows(tableData);
-                console.log("Pagenumber: " + pageNumber);
-                if (pageNumber < 4) {
+                console.log("totalRecords: " + totalRecords);
+                if (totalRecords < 400) {
                     myConnector.getData = function (table, doneCallback) {
 
                     };
                     return
                 }
+                console.log("tableData: " + tableData.count);
                 doneCallback();
             });
         };
