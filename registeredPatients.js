@@ -135,7 +135,7 @@
         ];
         
             var tableSchema = {
-                id: "Registered Patients",
+                id: "Registered",
                 alias: "Patient reports are listed here...........",
                 columns: cols
             };

@@ -13,7 +13,7 @@
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "Registeredpatients List";
+            tableau.connectionName = "test List";
             tableau.submit();
         });
     });
