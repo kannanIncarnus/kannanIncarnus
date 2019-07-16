@@ -70,6 +70,7 @@
 
                     pagenumber++;
                     myConnector.getData = function (table, doneCallback) {
+                        console.log("Fetch1");
 
                     };
                 }
