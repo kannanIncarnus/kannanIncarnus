@@ -157,8 +157,7 @@
             var tableSchema = {
                 id: "Registered",
                 alias: "Patient reports are listed here...........",
-                columns: cols,
-                incrementColumnId: "createdat"
+                columns: cols
             };
         
             schemaCallback([tableSchema]);
