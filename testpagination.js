@@ -25,6 +25,10 @@
 
     myConnector.getData = function (table, doneCallback) {
 
+        // var createdat = table.incrementValue
+        // console.log("createdat: " + createdat);
+
+        console.log("createdat: " + createdat);
         $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber, function (resp) {
             var data = resp.registeredpatients;
             let totalrecords = resp.totalrecords;
@@ -63,6 +67,8 @@
 
 
                 if ((limit * pagenumber) < totalrecords) {
+                    console.log("Fetch Again");
+
                     pagenumber++;
                     tableau.submit();
                 }
@@ -152,8 +158,9 @@
             var tableSchema = {
                 id: "Registered",
                 alias: "Patient reports are listed here...........",
-                columns: cols
-             };
+                columns: cols,
+                incrementColumnId: "createdat"
+            };
         
             schemaCallback([tableSchema]);
         };
