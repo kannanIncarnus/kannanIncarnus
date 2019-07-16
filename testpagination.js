@@ -69,7 +69,9 @@
                     console.log("Fetching Again");
 
                     pagenumber++;
-                    tableau.submit();
+                    myConnector.getData = function (table, doneCallback) {
+
+                    };
                 }
                 else {
                     console.log("Completed");
