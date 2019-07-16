@@ -30,12 +30,12 @@
 
         var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber
         if (!!createdat) {
-            queryPath = ""
+            queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber
         }
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.registeredpatients;
-            let totalrecords = resp.totalrecords;
+            var totalrecords = resp.totalrecords;
 
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
