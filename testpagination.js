@@ -35,6 +35,7 @@
                 // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
+                    "S.No": String((limit * pagenumber)+i),
                     "regid": data[i]._id,
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
@@ -77,6 +78,9 @@
         myConnector.getSchema = function (schemaCallback) {
             var cols = [{
                 id: "id",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "S.No",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "PatientName",
