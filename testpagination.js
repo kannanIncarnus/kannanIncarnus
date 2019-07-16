@@ -67,12 +67,8 @@
 
                 if ((limit * pagenumber) < totalrecords) {
                     console.log("Fetching Again");
-
                     pagenumber++;
-                    myConnector.getData = function (table, doneCallback) {
-                        console.log("Fetch1");
-
-                    };
+                    myConnector.getData();
                 }
                 else {
                     console.log("Completed");
