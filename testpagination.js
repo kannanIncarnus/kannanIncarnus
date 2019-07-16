@@ -18,58 +18,54 @@
 
         // var createdat = table.incrementValue
         // console.log("createdat: " + createdat);
-             getData(table, doneCallback)
-      
-        };
 
-        function getData(table, doneCallback) {
-            $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber, function (resp) {
-                var data = resp.registeredpatients;
-                let totalrecords = resp.totalrecords;
-    
-                    // Iterate over the JSON object
-                    for (var i = 0, len = data.length; i < len; i++) {
-                        
-                        tableData.push({
-                            "regid": data[i].regid,
-                            "id": data[i]._id,
-                            "PatientName": data[i].firstname,
-                            "createdat": data[i].createdat,
-                            "regdatetime": data[i].regdatetime,
-                            "hospital": data[i].hospital,
-                            "hospitalunit": data[i].hospitalunit,
-                            "mrn": data[i].mm, //mm
-                            "gender": data[i].gender,
-                            "agegroup": data[i].agegroup,
-                            "age": data[i].age,
-                            "patienttype": data[i].patienttype,
-                            "country": data[i].country,
-                            "state": data[i].state,
-                            "city": data[i].city,
-                            "pincode": data[i].zipcode,
-                            "latitude": data[i].hosplatitude,
-                            "longitude": data[i].hosplongitude,
-                            "createdby": data[i].createdby,
-                            "createddatetime": data[i].createddatetime,
-                            "modifiedby": data[i].modifiedby,
-                            "modifieddatetime": data[i].modifieddatetime
-                        });
-                    }
-    
-                    if ((limit * pagenumber) < totalrecords) {
-                        console.log("Fetching Again");
-                        console.log("totalRecords: " + (limit * pagenumber));
-                        pagenumber++;
-                        myConnector.getData();
-                    }
-                    else {
-                        table.appendRows(tableData);
-                        console.log("Completed");
-    
-                        doneCallback();
-                    }
-                });
-        }
+        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber, function (resp) {
+            var data = resp.registeredpatients;
+            let totalrecords = resp.totalrecords;
+
+                // Iterate over the JSON object
+                for (var i = 0, len = data.length; i < len; i++) {
+                    
+                    tableData.push({
+                        "regid": data[i].regid,
+                        "id": data[i]._id,
+                        "PatientName": data[i].firstname,
+                        "createdat": data[i].createdat,
+                        "regdatetime": data[i].regdatetime,
+                        "hospital": data[i].hospital,
+                        "hospitalunit": data[i].hospitalunit,
+                        "mrn": data[i].mm, //mm
+                        "gender": data[i].gender,
+                        "agegroup": data[i].agegroup,
+                        "age": data[i].age,
+                        "patienttype": data[i].patienttype,
+                        "country": data[i].country,
+                        "state": data[i].state,
+                        "city": data[i].city,
+                        "pincode": data[i].zipcode,
+                        "latitude": data[i].hosplatitude,
+                        "longitude": data[i].hosplongitude,
+                        "createdby": data[i].createdby,
+                        "createddatetime": data[i].createddatetime,
+                        "modifiedby": data[i].modifiedby,
+                        "modifieddatetime": data[i].modifieddatetime
+                    });
+                }
+
+                if ((limit * pagenumber) < totalrecords) {
+                    console.log("Fetching Again");
+                    console.log("totalRecords: " + (limit * pagenumber));
+                    pagenumber++;
+                    myConnector.getData(table, doneCallback);
+                }
+                else {
+                    table.appendRows(tableData);
+                    console.log("Completed");
+
+                    doneCallback();
+                }
+            });
+        };
         
         myConnector.getSchema = function (schemaCallback) {
             var cols = [{
