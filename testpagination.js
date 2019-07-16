@@ -2,6 +2,7 @@
     var myConnector = tableau.makeConnector();
     const limit = 100;
     var pagenumber = 1;
+    tableData = [];
 
     myConnector.getSchema = function (schemaCallback) {
 
@@ -16,7 +17,6 @@
     $(document).ready(function () {
         $("#submitButton").click(function () {
                 tableau.connectionName = "test List";
-                tableData = [];
 
                 tableau.submit();
         });
