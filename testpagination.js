@@ -71,6 +71,7 @@
                     myConnector.getData(table, doneCallback);
                 }
                 else {
+                    pagenumber = 0;
                     table.appendRows(tableData);
                     console.log("Completed");
                     console.log("Records: " + tableData.length);
