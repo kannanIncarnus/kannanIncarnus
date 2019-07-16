@@ -25,12 +25,12 @@
 
     myConnector.getData = function (table, doneCallback) {
 
-        var createdat = table.incrementValue
-        console.log("createdat: " + createdat);
+        var modifiedat = table.incrementValue
+        console.log("modifiedat: " + modifiedat);
 
-        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber
-        if (!!createdat) {
-            queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatients/" + limit + "/" + pagenumber
+        if (!!modifiedat) {
+            queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatients/" + limit + "/" + pagenumber + "/" + modifiedat
         }
 
         $.getJSON(queryPath, function (resp) {
@@ -44,7 +44,6 @@
                     "regid": data[i]._id,
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
-                    "createdat": data[i].createdat,
                     "regdatetime": data[i].registereddate,
                     "hospital": "",
                     "hospitalunit": "", //To Check
@@ -58,10 +57,10 @@
                     "pincode": data[i].zipcode,
                     "latitude": "",
                     "longitude": "",
+                    "createdat": data[i].createdat,
                     "createdby": data[i].createdby,
-                    "createddatetime": data[i].createddatetime,
                     "modifiedby": data[i].modifiedby,
-                    "modifieddatetime": data[i].modifieddatetime
+                    "modifieddatetime": data[i].modifiedat
                 });
             }
 
@@ -96,6 +95,10 @@
                 alias: "createdat",
                 dataType: tableau.dataTypeEnum.datetime
             }, {
+                id: "modifieddatetime",
+                alias: "modifieddatetime",
+                dataType: tableau.dataTypeEnum.datetime
+            }, {
                 id: "createdby",
                 alias: "createdby",
                 dataType: tableau.dataTypeEnum.string
@@ -125,7 +128,7 @@
                 id: "Registered",
                 alias: "Patient reports are listed here...........",
                 columns: cols,
-                incrementColumnId: "createdat"
+                incrementColumnId: "modifieddatetime"
             };
         
             schemaCallback([tableSchema]);
