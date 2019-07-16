@@ -1,12 +1,11 @@
 (function () {
     var myConnector = tableau.makeConnector();
-    var totalRecords = 200;
+    var responsearray = [];
 
     myConnector.getSchema = function (schemaCallback) {
 
     };
 
-    tableData = [];
     myConnector.getData = function (table, doneCallback) {
 
     };
@@ -15,14 +14,51 @@
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "test List";
-            tableau.submit();
+
+            var dateObj = {
+                startdate: $("#start-date").val().trim(),
+                enddate: $("#end-date").val().trim(),
+            }
+
+            function isValidDate(datestring) {
+                var d = new Date(datestring);
+                return !isNaN(d.getDate());
+            }
+
+            if (isValidDate(dateObj.startdate) && isValidDate(dateObj.enddate))
+            {
+                tableau.connectionData = JSON.stringify(dateObj);
+                tableau.connectionName = "test List";
+                tableau.submit();
+            }
+            else {
+                $("errorMsg").html("Enter valid dates. For example, 2000/01/01");
+            }
+
         });
     });
 
+
     myConnector.getData = function (table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatients/2019-06-01/2019-07-04", function (resp) {
-            var data = resp.registeredpatients,
+
+        var dataObj = JSON.parse(tableau.connectionData);
+        var todate = dataObj.todate;
+
+        let fromdate = table.incrementValue;
+        if (fromdate != null) {
+            console.log("lastcreatedat ==>"+lastcreatedat);
+        }
+        else {
+            fromdate = dataObj.startdate;
+            todate = dataObj.todate;
+        }
+
+        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatientswithpagination/" + fromdate + "/" + todate, function (resp) {
+            var data = resp.registeredpatients;
+            let totalrecords = resp.totalrecords;
+
+            tableData = [];
+            responsearray.appendRows(data);
 
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
@@ -53,14 +89,15 @@
                     });
                 }
         
-                if (tableData.count < totalRecords) {
-                     console.log("fetching Again: " + totalRecords);
+                table.appendRows(tableData);
+                console.log("totalRecords: " + totalrecords);
+                if (responsearray.length < totalrecords) {
+                     console.log("fetching Again: " + responsearray.length);
                     myConnector.getData = function (table, doneCallback) {
 
                     };
                 }
                 else {
-                    table.appendRows(tableData);
                     doneCallback();
                 }
             });
@@ -146,7 +183,8 @@
             var tableSchema = {
                 id: "Registered",
                 alias: "Patient reports are listed here...........",
-                columns: cols
+                columns: cols,
+                incrementColumnId: "createdat"
             };
         
             schemaCallback([tableSchema]);
