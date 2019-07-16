@@ -70,7 +70,7 @@
                 else {
                     table.appendRows(tableData);
                     console.log("Completed");
-                    console.log("Records: " + tableData.count);
+                    console.log("Records: " + tableData.length);
                     doneCallback();
                 }
             });
