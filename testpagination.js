@@ -8,10 +8,6 @@
 
     };
 
-    myConnector.getData = function (table, doneCallback) {
-
-    };
-
     tableau.registerConnector(myConnector);
 
     $(document).ready(function () {
@@ -25,17 +21,17 @@
 
     myConnector.getData = function (table, doneCallback) {
 
-        // var createdat = table.incrementValue
-        // console.log("createdat: " + createdat);
+        var createdat = table.incrementValue
+        console.log("createdat: " + createdat);
 
         $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber, function (resp) {
             var data = resp.registeredpatients;
             let totalrecords = resp.totalrecords;
 
-                // Iterate over the JSON object
+            // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 tableData.push({
-                    "S.No": String((limit * pagenumber)+i),
+                    "S.No": String((limit * (pagenumber-1))+i),
                     "regid": data[i]._id,
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
@@ -104,7 +100,7 @@
                 id: "Registered",
                 alias: "Patient reports are listed here...........",
                 columns: cols,
-                // incrementColumnId: "createdat"
+                incrementColumnId: "createdat"
             };
         
             schemaCallback([tableSchema]);
