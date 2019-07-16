@@ -60,7 +60,7 @@
                         console.log("Fetching Again");
                         console.log("totalRecords: " + (limit * pagenumber));
                         pagenumber++;
-                        myConnector.getData(table, doneCallback);
+                        myConnector.getData();
                     }
                     else {
                         table.appendRows(tableData);
