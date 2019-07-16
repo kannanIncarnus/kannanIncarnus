@@ -32,7 +32,7 @@
         if (!!createdat) {
             queryPath = ""
         }
-s
+
         $.getJSON(queryPath, function (resp) {
             var data = resp.registeredpatients;
             let totalrecords = resp.totalrecords;
