@@ -61,7 +61,6 @@
                     });
                 }
         
-                table.appendRows(tableData);
                 console.log("totalRecords: " + totalrecords);
 
 
@@ -71,6 +70,7 @@
                     myConnector.getData();
                 }
                 else {
+                    table.appendRows(tableData);
                     console.log("Completed");
 
                     doneCallback();
