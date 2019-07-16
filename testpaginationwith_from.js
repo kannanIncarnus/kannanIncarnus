@@ -1,7 +1,6 @@
 (function () {
     var myConnector = tableau.makeConnector();
-    const limit = 100;
-    var pagenumber = 1;
+    var responsearray = [];
 
     myConnector.getSchema = function (schemaCallback) {
 
@@ -15,18 +14,50 @@
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
-                tableau.connectionName = "test List";
-                tableData = [];
 
+            var dateObj = {
+                startdate: $("#start-date").val().trim(),
+                enddate: $("#end-date").val().trim(),
+            }
+
+            function isValidDate(datestring) {
+                var d = new Date(datestring);
+                return !isNaN(d.getDate());
+            }
+
+            if (isValidDate(dateObj.startdate) && isValidDate(dateObj.enddate))
+            {
+                tableau.connectionData = JSON.stringify(dateObj);
+                tableau.connectionName = "test List";
                 tableau.submit();
+            }
+            else {
+                $("errorMsg").html("Enter valid dates. For example, 2000/01/01");
+            }
+
         });
     });
 
 
     myConnector.getData = function (table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber, function (resp) {
+
+        var dataObj = JSON.parse(tableau.connectionData);
+        var todate = dataObj.enddate;
+
+        let fromdate = table.incrementValue;
+        if (!!fromdate && fromdate.length > 0) {
+            console.log("lastcreatedat ==>"+fromdate);
+        }
+        else {
+            fromdate = dataObj.startdate;
+        }
+
+        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatients/" + fromdate + "/" + todate, function (resp) {
             var data = resp.registeredpatients;
             let totalrecords = resp.totalrecords;
+
+            tableData = [];
+            responsearray.appendRows(data);
 
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
@@ -59,11 +90,11 @@
         
                 table.appendRows(tableData);
                 console.log("totalRecords: " + totalrecords);
+                if (responsearray.length < totalrecords) {
+                     console.log("fetching Again: " + responsearray.length);
+                    myConnector.getData = function (table, doneCallback) {
 
-
-                if ((limit * pagenumber) < totalrecords) {
-                    pagenumber++;
-                    tableau.submit();
+                    };
                 }
                 else {
                     doneCallback();
