@@ -1,6 +1,6 @@
 (function () {
     var myConnector = tableau.makeConnector();
-    const limit = 5000;
+    const limit = 1000;
     var pagenumber = 1;
     tableData = [];
 
@@ -35,7 +35,7 @@
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.registeredpatients;
-            var totalrecords = resp.totalrecords;
+            var totalrecords = "10000"//resp.totalrecords;
 
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
