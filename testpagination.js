@@ -28,7 +28,12 @@
         var createdat = table.incrementValue
         console.log("createdat: " + createdat);
 
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber, function (resp) {
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber
+        if (!!createdat) {
+            queryPath = ""
+        }
+s
+        $.getJSON(queryPath, function (resp) {
             var data = resp.registeredpatients;
             let totalrecords = resp.totalrecords;
 
@@ -89,14 +94,30 @@
             }, {
                 id: "createdat",
                 alias: "createdat",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             }, {
-                id: "email",
-                alias: "e-mail",
+                id: "createdby",
+                alias: "createdby",
                 dataType: tableau.dataTypeEnum.string
             },
             {
-                id:"registereddate",
+                id:"regdatetime",
+                dataType: tableau.dataTypeEnum.datetime
+            }, {
+                id: "country",
+                alias: "country",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "state",
+                alias: "state",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "city",
+                alias: "city",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "pincode",
+                alias: "pincode",
                 dataType: tableau.dataTypeEnum.string
             }];
         
