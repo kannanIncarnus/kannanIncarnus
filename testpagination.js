@@ -43,10 +43,11 @@
 
         var dataObj = JSON.parse(tableau.connectionData);
         var todate = dataObj.todate;
+        console.log("lastcreatedat ==>"+table.incrementValue);
 
         let fromdate = table.incrementValue;
         if (!!fromdate) {
-            console.log("lastcreatedat ==>"+table.incrementValue);
+           // console.log("lastcreatedat ==>"+table.incrementValue);
         }
         else {
             fromdate = dataObj.startdate;
