@@ -66,12 +66,14 @@
 
 
                 if ((limit * pagenumber) < totalrecords) {
-                    console.log("Fetch Again");
+                    console.log("Fetching Again");
 
                     pagenumber++;
                     tableau.submit();
                 }
                 else {
+                    console.log("Completed");
+
                     doneCallback();
                 }
             });
@@ -157,7 +159,8 @@
             var tableSchema = {
                 id: "Registered",
                 alias: "Patient reports are listed here...........",
-                columns: cols
+                columns: cols,
+                // incrementColumnId: "createdat"
             };
         
             schemaCallback([tableSchema]);
