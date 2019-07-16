@@ -1,6 +1,6 @@
 (function () {
     var myConnector = tableau.makeConnector();
-    const limit = 100;
+    const limit = 5000;
     var pagenumber = 1;
     tableData = [];
 
