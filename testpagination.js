@@ -8,6 +8,10 @@
 
     };
 
+    myConnector.getData = function (table, doneCallback) {
+
+    };
+
     tableau.registerConnector(myConnector);
 
     $(document).ready(function () {
