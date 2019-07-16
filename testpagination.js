@@ -28,10 +28,10 @@
         var modifiedat = table.incrementValue
         console.log("modifiedat: " + modifiedat);
 
-        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber
-        if (!!modifiedat) {
-            queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
+        if (!modifiedat) {
+            modifiedat = "2000-01-01"
         }
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.registeredpatients;
