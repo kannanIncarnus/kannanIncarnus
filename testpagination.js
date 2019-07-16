@@ -45,7 +45,7 @@
         var todate = dataObj.todate;
 
         let fromdate = table.incrementValue;
-        if (fromdate != null) {
+        if (!!fromdate) {
             console.log("lastcreatedat ==>"+fromdate);
         }
         else {
