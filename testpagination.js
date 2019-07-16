@@ -50,7 +50,6 @@
         }
         else {
             fromdate = dataObj.startdate;
-            todate = dataObj.todate;
         }
 
         $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatientswithpagination/" + fromdate + "/" + todate, function (resp) {
