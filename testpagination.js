@@ -9,7 +9,7 @@
     };
 
     myConnector.getData = function (table, doneCallback) {
-
+        console.log("First Fetch");
     };
 
     tableau.registerConnector(myConnector);
@@ -60,12 +60,10 @@
                         "modifieddatetime": data[i].modifieddatetime
                     });
                 }
-        
-                console.log("totalRecords: " + totalrecords);
-
 
                 if ((limit * pagenumber) < totalrecords) {
                     console.log("Fetching Again");
+                    console.log("totalRecords: " + (limit * pagenumber));
                     pagenumber++;
                     myConnector.getData();
                 }
