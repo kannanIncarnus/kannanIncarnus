@@ -42,7 +42,7 @@
     myConnector.getData = function (table, doneCallback) {
 
         var dataObj = JSON.parse(tableau.connectionData);
-        var todate = dataObj.todate;
+        var todate = dataObj.enddate;
 
         let fromdate = table.incrementValue;
         if (!!fromdate && fromdate.length > 0) {
