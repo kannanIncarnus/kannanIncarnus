@@ -35,7 +35,7 @@
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.registeredpatients;
-            var totalrecords = "200"//resp.totalrecords;
+            var totalrecords = "2000"//resp.totalrecords;
 
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
