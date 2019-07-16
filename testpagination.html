@@ -6,7 +6,7 @@
         var dd = String(today.getDate()).padStart(2,'0');
         var mm = String(today.getMonth() + 1).padStart(2,'0')
         var year = today.getFullYear();
-        today = year + '/' + mm + '/' + dd;
+        today = year + '-' + mm + '-' + dd;
         document.getElementById("end-date").value = today;
     }
 </script>
@@ -35,7 +35,7 @@
                             <label for="end-date-one">End Date</label>
                         </div>
                         <div class="form-inline">
-                            <input type="text" class="form-control" id="start-date" value="2016/05/08">
+                            <input type="text" class="form-control" id="start-date" value="2018-06-01">
                             <input type="text" class="form-control" id="end-date">
                         </div>
                         </form>
