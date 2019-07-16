@@ -25,9 +25,6 @@
 
     myConnector.getData = function (table, doneCallback) {
 
-        var createdat = table.incrementValue
-        console.log("createdat: " + createdat);
-
         $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientswithpagination/" + limit + "/" + pagenumber, function (resp) {
             var data = resp.registeredpatients;
             let totalrecords = resp.totalrecords;
