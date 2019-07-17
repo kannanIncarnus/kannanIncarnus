@@ -21,11 +21,15 @@
         if (!modifiedat) {
             modifiedat = "2000-01-01"
         }
+        else {
+            tableData = [];
+        }
+
         var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.registeredpatients;
-            var totalrecords = "2000"//resp.totalrecords;
+            var totalrecords = resp.totalrecords;
 
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
