@@ -27,8 +27,6 @@
         var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
 
         $.getJSON(queryPath, function (resp) {
-            console.log("Query Response");
-
             var data = resp.patients;
             var totalrecords = resp.totalrecords;
 
