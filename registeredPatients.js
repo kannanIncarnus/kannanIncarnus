@@ -1,15 +1,8 @@
 (function () {
     var myConnector = tableau.makeConnector();
-
-    myConnector.getSchema = function (schemaCallback) {
-
-    };
-
-    myConnector.getData = function (table, doneCallback) {
-
-    };
-
-    tableau.registerConnector(myConnector);
+    const limit = 1000;
+    var pagenumber = 1;
+    tableData = [];
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
@@ -19,14 +12,23 @@
     });
 
     myConnector.getData = function (table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatients/2019-06-01/2019-07-04", function (resp) {
-            var data = resp.registeredpatients,
-                tableData = [];
+        var modifiedat = table.incrementValue
+        console.log("modifiedat: " + modifiedat);
+
+        if (!modifiedat) {
+            modifiedat = "2000-01-01"
+        }
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
+
+        $.getJSON(queryPath, function (resp) {
+            var data = resp.registeredpatients;
+            var totalrecords = "2000"//resp.totalrecords;
 
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
                     
                     tableData.push({
+                        "SNo": String((limit * (pagenumber-1))+i),
                         "regid": data[i].regid,
                         "id": data[i]._id,
                         "PatientName": data[i].firstname,
@@ -52,8 +54,19 @@
                     });
                 }
         
-                table.appendRows(tableData);
-                doneCallback();
+                if ((limit * pagenumber) < totalrecords) {
+                    console.log("Fetching Again");
+                    console.log("totalRecords: " + (limit * pagenumber));
+                    pagenumber++;
+                    myConnector.getData(table, doneCallback);
+                }
+                else {
+                    pagenumber = 1;
+                    table.appendRows(tableData);
+                    console.log("Completed");
+                    console.log("Records: " + tableData.length);
+                    doneCallback();
+                }
             });
         };
         
@@ -61,8 +74,10 @@
             var cols = [{
                 id: "regid",
                 dataType: tableau.dataTypeEnum.string
-            },
-                {
+            }, {
+                id: "SNo",
+                dataType: tableau.dataTypeEnum.string
+            }, {
                 id: "id",
                 dataType: tableau.dataTypeEnum.string
             }, {
@@ -137,9 +152,13 @@
             var tableSchema = {
                 id: "Registered",
                 alias: "Patient reports are listed here...........",
-                columns: cols
+                columns: cols,
+                incrementColumnId: "modifieddatetime"
             };
         
             schemaCallback([tableSchema]);
         };
+
+        tableau.registerConnector(myConnector);
+
     })();
