@@ -26,11 +26,13 @@
 
         var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
 
-        $.getJSON(queryPath, function (resp,errors) {
+        $.getJSON(queryPath, function (resp) {
+            console.log("Query Response");
+
             var data = resp.patients;
             var totalrecords = resp.totalrecords;
 
-            if (errors) {
+            if (resp.error) {
                 pagenumber = 1;
                 table.appendRows(tableData);
                 console.log("Completed with error");
