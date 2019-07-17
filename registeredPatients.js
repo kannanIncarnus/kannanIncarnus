@@ -18,7 +18,7 @@
             modifiedat = "2000-01-01"
         }
         else {
-            tableData = [];
+            // tableData = [];
         }
 
         console.log("modifiedat: " + modifiedat);
