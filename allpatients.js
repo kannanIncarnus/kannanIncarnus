@@ -31,6 +31,10 @@
             var totalrecords = resp.totalrecords;
 
             if (resp.error) {
+                pagenumber = 1;
+                table.appendRows(tableData);
+                console.log("Completed with error");
+                console.log("Records: " + tableData.length);
                 doneCallback();
             }
 
