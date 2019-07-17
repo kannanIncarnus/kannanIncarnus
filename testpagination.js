@@ -4,16 +4,6 @@
     var pagenumber = 1;
     tableData = [];
 
-    myConnector.getSchema = function (schemaCallback) {
-
-    };
-
-    myConnector.getData = function (table, doneCallback) {
-
-    };
-
-    tableau.registerConnector(myConnector);
-
     $(document).ready(function () {
         $("#submitButton").click(function () {
                 tableau.connectionName = "test List";
@@ -134,4 +124,6 @@
         
             schemaCallback([tableSchema]);
         };
+
+    tableau.registerConnector(myConnector);
     })();
