@@ -157,7 +157,7 @@
             }, {
                 id: "modifieddatetime",
                 alias: "modifieddatetime",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.date
             }
         ];
         
