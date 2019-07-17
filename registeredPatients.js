@@ -144,7 +144,7 @@
             {
                 id: "createddatetime",
                 alias: "createddatetime",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             }, 
             {
                 id: "createdby",
