@@ -80,6 +80,12 @@
                 id: "id",
                 dataType: tableau.dataTypeEnum.string
             }, {
+                id: "hospital",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "hospitalunit",
+                dataType: tableau.dataTypeEnum.string
+            }, {
                 id: "PatientName",
                 alias: "Patient Name",
                 dataType: tableau.dataTypeEnum.string
