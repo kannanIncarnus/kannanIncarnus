@@ -18,7 +18,7 @@
             modifiedat = "2000-01-01"
         }
         else {
-            // tableData = [];
+            tableData = [];
         }
 
         console.log("modifiedat: " + modifiedat);
@@ -28,6 +28,7 @@
             var data = resp.registeredpatients;
             var totalrecords = resp.totalrecords;
 
+            console.log("totalRecords in the collection: " + totalrecords);
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
                     tableData.push({
@@ -67,7 +68,7 @@
                     pagenumber = 1;
                     table.appendRows(tableData);
                     console.log("Completed");
-                    console.log("Records: " + tableData.length);
+                    console.log("Fetched Records: " + tableData.length);
                     doneCallback();
                 }
             });
