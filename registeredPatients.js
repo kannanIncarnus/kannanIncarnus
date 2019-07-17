@@ -26,7 +26,6 @@
 
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
-                    
                     tableData.push({
                         "SNo": String((limit * (pagenumber-1))+i),
                         "regid": data[i].regid,
