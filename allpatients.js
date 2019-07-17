@@ -6,8 +6,7 @@
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
-                tableau.connectionName = "test List";
-
+                tableau.connectionName = "Patients List";
                 tableau.submit();
         });
     });
@@ -120,7 +119,7 @@
             }];
         
             var tableSchema = {
-                id: "Registered",
+                id: "Patients",
                 alias: "Patient reports are listed here...........",
                 columns: cols,
                 incrementColumnId: "modifieddatetime"
