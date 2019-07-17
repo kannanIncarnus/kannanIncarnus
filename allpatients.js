@@ -25,10 +25,10 @@
             tableData = [];
         }
 
-        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
 
         $.getJSON(queryPath, function (resp) {
-            var data = resp.registeredpatients;
+            var data = resp.patients;
             var totalrecords = resp.totalrecords;
 
             // Iterate over the JSON object
