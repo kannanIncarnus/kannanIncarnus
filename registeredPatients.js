@@ -16,8 +16,12 @@
 
         if (!modifiedat) {
             modifiedat = "2000-01-01"
-            console.log("modifiedat: " + modifiedat);
         }
+        else {
+            tableData = [];
+        }
+
+        console.log("modifiedat: " + modifiedat);
         var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getregisteredpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
 
         $.getJSON(queryPath, function (resp) {
