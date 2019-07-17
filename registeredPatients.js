@@ -40,7 +40,7 @@
                         "regdatetime": data[i].regdatetime,
                         "hospital": data[i].hospital,
                         "hospitalunit": data[i].hospitalunit,
-                        "mrn": data[i].mm, //mm
+                        "mrn": data[i].mm, //mrn
                         "gender": data[i].gender,
                         "agegroup": data[i].agegroup,
                         "age": data[i].age,

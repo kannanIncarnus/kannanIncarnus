@@ -29,7 +29,11 @@
         $.getJSON(queryPath, function (resp) {
             var data = resp.patients;
             var totalrecords = resp.totalrecords;
-            
+
+            if (resp.error) {
+                doneCallback();
+            }
+
             console.log("totalRecords in the collection: " + totalrecords);
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
@@ -40,7 +44,7 @@
                     "PatientName": data[i].firstname,
                     "regdatetime": data[i].registereddate,
                     "hospital": "",
-                    "hospitalunit": "", //To Check
+                    "hospitalunit": "",
                     "mrn": data[i].mrn,
                     "gender": data[i].gender,
                     "agegroup": "", //To Check
