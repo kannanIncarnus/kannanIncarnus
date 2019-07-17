@@ -1,7 +1,7 @@
 (function () {
     var myConnector = tableau.makeConnector();
     const limit = 1000;
-    var pagenumber = 1;
+    var pagenumber = 127;
     tableData = [];
 
     $(document).ready(function () {
