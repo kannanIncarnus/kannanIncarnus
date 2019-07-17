@@ -1,7 +1,7 @@
 (function () {
     var myConnector = tableau.makeConnector();
     const limit = 1000;
-    var pagenumber = 100;
+    var pagenumber = 127;
     tableData = [];
 
     $(document).ready(function () {
@@ -49,8 +49,8 @@
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
                     "regdatetime": data[i].registereddate,
-                    "hospital": "",
-                    "hospitalunit": "",
+                    "hospital": data[i].hospital,
+                    "hospitalunit": data[i].hospitalunit,
                     "mrn": data[i].mrn,
                     "gender": data[i].gender,
                     "agegroup": "", //To Check
