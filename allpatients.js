@@ -25,7 +25,7 @@
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.patients;
-            var totalrecords = 1000;
+            var totalrecords = resp.totalrecords;
 
             if (!modifiedat) {
                 modifiedat = "2000-01-01"
