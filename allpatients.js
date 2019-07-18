@@ -1,7 +1,7 @@
 (function () {
     var myConnector = tableau.makeConnector();
     const limit = 10000;
-    var pagenumber = 106;
+    var pagenumber = 1;
     tableData = [];
 
     $(document).ready(function () {
@@ -25,7 +25,7 @@
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.patients;
-            var totalrecords = resp.totalrecords;
+            var totalrecords = 1000;
 
             if (!modifiedat) {
                 modifiedat = "2000-01-01"
