@@ -67,16 +67,14 @@
             }
 
                 if ((limit * pagenumber) < totalrecords) {
-                    console.log("Fetching Again");
-                    console.log("totalRecords: " + (limit * pagenumber));
+                    console.log("Fetching Again from totalRecords: " + (limit * pagenumber));
                     pagenumber++;
                     myConnector.getData(table, doneCallback);
                 }
                 else {
                     pagenumber = 1;
                     table.appendRows(tableData);
-                    console.log("Completed");
-                    console.log("Records: " + tableData.length);
+                    console.log("CompletedRecords: " + tableData.length);
                     doneCallback();
                 }
             });
