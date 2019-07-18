@@ -1,7 +1,7 @@
 (function () {
     var myConnector = tableau.makeConnector();
     const limit = 10000;
-    var pagenumber = 1;
+    var pagenumber = 100;
     tableData = [];
 
     $(document).ready(function () {
@@ -11,17 +11,14 @@
         });
     });
 
-
     myConnector.getData = function (table, doneCallback) {
-
         var modifiedat = table.incrementValue
-        console.log("modifiedat: " + modifiedat);
 
         if (!modifiedat) {
             modifiedat = "2000-01-01"
         }
         else {
-            tableData = [];
+            console.log("modifiedat: " + modifiedat);
         }
 
         var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
@@ -30,19 +27,19 @@
             var data = resp.patients;
             var totalrecords = resp.totalrecords;
 
-            if (resp.error) {
-                pagenumber = 1;
-                table.appendRows(tableData);
-                console.log("Completed with error");
-                console.log("Records: " + tableData.length);
-                doneCallback();
+            if (!modifiedat) {
+                modifiedat = "2000-01-01"
+            }
+            else {
+                console.log("modifiedat: " + modifiedat);
             }
 
             console.log("totalRecords in the collection: " + totalrecords);
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
+                var serialno = (limit * (pagenumber-1)) + i;
                 tableData.push({
-                    "SNo": String((limit * (pagenumber-1))+i),
+                    "SNo": String(serialno+1),
                     "regid": data[i]._id,
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
@@ -66,17 +63,19 @@
                 });
             }
 
-                if ((limit * pagenumber) < totalrecords) {
-                    console.log("Fetching Again from totalRecords: " + (limit * pagenumber));
-                    pagenumber++;
-                    myConnector.getData(table, doneCallback);
-                }
-                else {
-                    pagenumber = 1;
-                    table.appendRows(tableData);
-                    console.log("CompletedRecords: " + tableData.length);
-                    doneCallback();
-                }
+            var currentrecords = (limit * pagenumber);
+            if (currentrecords < totalrecords) {
+                console.log("Fetching Again with currentrecords: " + currentrecords);
+                pagenumber++;
+                myConnector.getData(table, doneCallback);
+            }
+            else {
+                pagenumber = 1;
+                table.appendRows(tableData);
+                console.log("CompletedRecords: " + tableData.length);
+                tableData = [];
+                doneCallback();
+            }
             });
         };
         
