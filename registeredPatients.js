@@ -30,7 +30,7 @@
             console.log("totalRecords in the collection: " + totalrecords);
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
-                    let serialno = (limit * (pagenumber-1)) + i;
+                    var serialno = (limit * (pagenumber-1)) + i;
                     tableData.push({
                         "SNo": String(serialno+1),
                         "regid": data[i].regid,
@@ -58,7 +58,7 @@
                     });
                 }
         
-                let currentrecords = (limit * pagenumber);
+                var currentrecords = (limit * pagenumber);
                 if (currentrecords < totalrecords) {
                     console.log("Fetching Again with currentrecords: " + currentrecords);
                     pagenumber++;
