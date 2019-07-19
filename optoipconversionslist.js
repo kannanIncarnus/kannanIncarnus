@@ -1,5 +1,6 @@
 (function () {
-  const limit = 1000;
+    var myConnector = tableau.makeConnector();
+    const limit = 1000;
     var pagenumber = 1;
     tableData = [];
 
@@ -271,4 +272,6 @@
     
         schemaCallback([tableSchema]);
     };
+
+    tableau.registerConnector(myConnector);
 })();
