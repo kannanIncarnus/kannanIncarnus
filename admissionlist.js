@@ -128,8 +128,7 @@
                 id: "agegroup",
                 alias: "agegroup",
                 dataType: tableau.dataTypeEnum.string
-            },
-            {
+            }, {
                 id: "age",
                 alias: "age",
                 dataType: tableau.dataTypeEnum.int
@@ -153,32 +152,31 @@
                 id: "pincode",
                 alias: "pincode",
                 dataType: tableau.dataTypeEnum.string
-            },
-            {
+            }, {
                 id: "DischargeDateTime",
                 alias: "DischargeDateTime",
                 dataType: tableau.dataTypeEnum.datetime
-            },{
+            }, {
                 id: "DISCWARD",
                 alias: "DISCWARD",
                 dataType: tableau.dataTypeEnum.string
-            },{
+            }, {
                 id: "OPVISITDATE",
                 alias: "OPVISITDATE",
                 dataType: tableau.dataTypeEnum.datetime
-            },{
+            }, {
                 id: "FOLLOWUPDATE",
                 alias: "FOLLOWUPDATE",
                 dataType: tableau.dataTypeEnum.date
-            },{
+            }, {
                 id: "BedName",
                 alias: "BedName",
                 dataType: tableau.dataTypeEnum.string
-            },{
+            }, {
                 id: "createdby",
                 alias: "createdby",
                 dataType: tableau.dataTypeEnum.string
-            },{
+            }, {
                 id: "createddatetime",
                 alias: "createddatetime",
                 dataType: tableau.dataTypeEnum.datetime
