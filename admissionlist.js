@@ -50,7 +50,7 @@
                     "pincode": data[i].zipcode,
                     "DischargeDateTime": data[i].dischargedate,
                     "DISCWARD": data[i].ward,
-                    "OPVISITDATE": data[i].regdatetime,
+                    "OPVISITDATE": data[i].registereddate,
                     "FOLLOWUPDATE": data[i].followupdate, //To Check
                     "BedName": data[i].bed,
                     "createdby": data[i].createdby,
