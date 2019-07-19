@@ -1,16 +1,6 @@
 (function () {
     var myConnector = tableau.makeConnector();
 
-    myConnector.getSchema = function (schemaCallback) {
-
-    };
-
-    myConnector.getData = function (table, doneCallback) {
-
-    };
-
-    tableau.registerConnector(myConnector);
-
     $(document).ready(function () {
         $("#submitButton").click(function () {
             tableau.connectionName = "Admission List";
@@ -19,13 +9,27 @@
     });
 
     myConnector.getData = function (table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getadmissionlist/2019-06-01/2019-07-04", function (resp) {
-            var data = resp.admissionlist,
-                tableData = [];
+        var modifiedat = table.incrementValue
 
-            // Iterate over the JSON object
-            for (var i = 0, len = data.length; i < len; i++) {
-                tableData.push({
+        if (!modifiedat) {
+            modifiedat = "2000-01-01"
+        }
+        else {
+            console.log("modifiedat: " + modifiedat);
+        }
+
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getadmissionlist/" + limit + "/" + pagenumber + "/" + modifiedat
+
+        $.getJSON(queryPath, function (resp) {
+            var data = resp.admissionlist;
+            var totalrecords = resp.totalrecords;
+
+            console.log("totalRecords in the collection: " + totalrecords);
+                // Iterate over the JSON object
+                for (var i = 0, len = data.length; i < len; i++) {
+                    var serialno = (limit * (pagenumber-1)) + i;
+                    tableData.push({
+                    "SNo": String(serialno+1),
                     "ADMISSIONID": data[i]._id,
                     "ADMISSIONDATETIME": data[i].admitdate,
                     "ADMITDEPARTMENT": data[i].department,
@@ -57,13 +61,29 @@
                     "Admission Type": data[i].admtype //To Check
                 });
             }
-            table.appendRows(tableData);
-            doneCallback();
+
+            var currentrecords = (limit * pagenumber);
+            if (currentrecords < totalrecords) {
+                console.log("Fetching Again with currentrecords: " + currentrecords);
+                pagenumber++;
+                myConnector.getData(table, doneCallback);
+            }
+            else {
+                pagenumber = 1;
+                table.appendRows(tableData);
+                console.log("CompletedRecords: " + tableData.length);
+                tableData = [];
+                doneCallback();
+            }
         });
     };
 
     myConnector.getSchema = function (schemaCallback) {
         var cols = [
+            {
+                id: "SNo",
+                dataType: tableau.dataTypeEnum.string
+            },
             {
                 id: "ADMISSIONID",
                 alias: "ADMISSIONID",
@@ -149,7 +169,7 @@
             },{
                 id: "FOLLOWUPDATE",
                 alias: "FOLLOWUPDATE",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.date
             },{
                 id: "BedName",
                 alias: "BedName",
@@ -169,7 +189,7 @@
             },{
                 id: "modifieddatetime",
                 alias: "modifieddatetime",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.date
             },{
                 id: "DIDTRIAGE",
                 alias: "DIDTRIAGE",
@@ -196,9 +216,13 @@
         var tableSchema = {
             id: "patientFeed",
             alias: "Patient reports are listed here...........",
-            columns: cols
+            columns: cols,
+            incrementColumnId: "modifieddatetime"
         };
 
         schemaCallback([tableSchema]);
     };
+
+    tableau.registerConnector(myConnector);
+
 })();
