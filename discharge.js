@@ -1,69 +1,90 @@
 (function () {
     var myConnector = tableau.makeConnector();
-
-    myConnector.getSchema = function (schemaCallback) {
-
-    };
-
-    myConnector.getData = function (table, doneCallback) {
-
-    };
-
-    tableau.registerConnector(myConnector);
+    const limit = 1000;
+    var pagenumber = 1;
+    tableData = [];
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
-            tableau.connectionName = "Registeredpatients List";
-            tableau.submit();
+                tableau.connectionName = "Discharge List";
+                tableau.submit();
         });
     });
 
     myConnector.getData = function (table, doneCallback) {
-        $.getJSON("https://demo.incarnus.com:8850/thirdparty/reportingservice/patientreports/getregisteredpatients/2019-06-01/2019-07-04", function (resp) {
-            var data = resp.registeredpatients,
-                tableData = [];
+        var modifiedat = table.incrementValue
 
-                // Iterate over the JSON object
-                for (var i = 0, len = data.length; i < len; i++) {
-                    
-                    tableData.push({
-                        "regid": data[i].regid,
-                        "id": data[i]._id,
-                        "PatientName": data[i].firstname,
-                        "createdat": data[i].createdat,
-                        "regdatetime": data[i].regdatetime,
-                        "hospital": data[i].hospital,
-                        "hospitalunit": data[i].hospitalunit,
-                        "mrn": data[i].mrn,
-                        "gender": data[i].gender,
-                        "agegroup": data[i].agegroup,
-                        "age": data[i].age,
-                        "patienttype": data[i].patienttype,
-                        "country": data[i].country,
-                        "state": data[i].state,
-                        "city": data[i].city,
-                        "pincode": data[i].zipcode,
-                        "latitude": data[i].hosplatitude,
-                        "longitude": data[i].hosplongitude,
-                        "createdby": data[i].createdby,
-                        "createddatetime": data[i].createddatetime,
-                        "modifiedby": data[i].modifiedby,
-                        "modifieddatetime": data[i].modifieddatetime
-                    });
-                }
-        
+        if (!modifiedat) {
+            modifiedat = "2000-01-01"
+        }
+        else {
+            console.log("modifiedat: " + modifiedat);
+        }
+
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/dischargelist/" + limit + "/" + pagenumber + "/" + modifiedat
+
+        $.getJSON(queryPath, function (resp) {
+            var data = resp.patients;
+            var totalrecords = resp.totalrecords;
+
+            if (!modifiedat) {
+                modifiedat = "2000-01-01"
+            }
+            else {
+                console.log("modifiedat: " + modifiedat);
+            }
+
+            console.log("totalRecords in the collection: " + totalrecords);
+            // Iterate over the JSON object
+            for (var i = 0, len = data.length; i < len; i++) {
+                var serialno = (limit * (pagenumber-1)) + i;
+                tableData.push({
+                    "SNo": String(serialno+1),
+                    "regid": data[i]._id,
+                    "id": data[i]._id,
+                    "PatientName": data[i].firstname,
+                    "regdatetime": data[i].registereddate,
+                    "hospital": data[i].hospital,
+                    "hospitalunit": data[i].hospitalunit,
+                    "mrn": data[i].mrn,
+                    "gender": data[i].gender,
+                    "agegroup": "", //To Check
+                    "patienttype": data[i].patienttype,
+                    "country": data[i].country,
+                    "state": data[i].state,
+                    "city": data[i].city,
+                    "pincode": data[i].zipcode,
+                    "latitude": "",
+                    "longitude": "",
+                    "createdat": data[i].createdat,
+                    "createdby": data[i].createdby,
+                    "modifiedby": data[i].modifiedby,
+                    "modifieddatetime": data[i].modifiedat
+                });
+            }
+
+            var currentrecords = (limit * pagenumber);
+            if (currentrecords < totalrecords) {
+                console.log("Fetching Again with currentrecords: " + currentrecords);
+                pagenumber++;
+                myConnector.getData(table, doneCallback);
+            }
+            else {
+                pagenumber = 1;
                 table.appendRows(tableData);
+                console.log("CompletedRecords: " + tableData.length);
+                tableData = [];
                 doneCallback();
+            }
             });
         };
         
         myConnector.getSchema = function (schemaCallback) {
             var cols = [{
-                id: "regid",
-                dataType: tableau.dataTypeEnum.string
-            },
-                {
                 id: "id",
+                dataType: tableau.dataTypeEnum.string
+            },{
+                id: "SNo",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "PatientName",
@@ -72,31 +93,19 @@
             }, {
                 id: "createdat",
                 alias: "createdat",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             }, {
-                id: "gender",
-                alias: "gender",
-                dataType: tableau.dataTypeEnum.string
+                id: "modifieddatetime",
+                alias: "modifieddatetime",
+                dataType: tableau.dataTypeEnum.datetime
             }, {
-                id: "agegroup",
-                alias: "agegroup",
-                dataType: tableau.dataTypeEnum.string
-            }, {
-                id: "age",
-                alias: "age",
-                dataType: tableau.dataTypeEnum.number
-            }, {
-                id: "mrn",
-                alias: "mrn",
+                id: "createdby",
+                alias: "createdby",
                 dataType: tableau.dataTypeEnum.string
             },
             {
                 id:"regdatetime",
                 dataType: tableau.dataTypeEnum.datetime
-            }, {
-                id: "patienttype",
-                alias: "patienttype",
-                dataType: tableau.dataTypeEnum.string
             }, {
                 id: "country",
                 alias: "country",
@@ -113,33 +122,17 @@
                 id: "pincode",
                 alias: "pincode",
                 dataType: tableau.dataTypeEnum.string
-            },  
-            {
-                id: "createddatetime",
-                alias: "createddatetime",
-                dataType: tableau.dataTypeEnum.string
-            }, 
-            {
-                id: "createdby",
-                alias: "createdby",
-                dataType: tableau.dataTypeEnum.string
-            }, {
-                id: "modifiedby",
-                alias: "modifiedby",
-                dataType: tableau.dataTypeEnum.string
-            }, {
-                id: "modifieddatetime",
-                alias: "modifieddatetime",
-                dataType: tableau.dataTypeEnum.string
-            }
-        ];
+            }];
         
             var tableSchema = {
-                id: "patientFeed",
-                alias: "Patient reports are listed here...........",
-                columns: cols
+                id: "Discharge",
+                alias: "Discharge reports are listed here...........",
+                columns: cols,
+                incrementColumnId: "modifieddatetime"
             };
         
             schemaCallback([tableSchema]);
         };
+
+    tableau.registerConnector(myConnector);
     })();
