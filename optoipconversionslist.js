@@ -24,7 +24,7 @@
         var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getoptoipconversionlist/" + limit + "/" + pagenumber //+ "/" + modifiedat
 
         $.getJSON(queryPath, function (resp) {
-            var data = resp.patients;
+            var data = resp.getopipconversionlist;
             var totalrecords = resp.totalrecords;
     
             console.log("totalRecords in the collection: " + totalrecords);
