@@ -38,7 +38,7 @@
                     "hospitalunit": data[i].hospitalunit,
                     "mrn": data[i].mrn,
                     "gender": data[i].gender,
-                    "agegroup": data[i].agegroup,
+                    "agegroup": "", //Missing
                     "age": data[i].age,
                     "patienttype": data[i].patienttype,
                     "country": data[i].country,
