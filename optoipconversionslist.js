@@ -33,8 +33,8 @@
                 var serialno = (limit * (pagenumber-1)) + i;
                 tableData.push({
                     "SNo": String(serialno+1),
-                    "Visit": data[i].encounter,
-                    "VISITDATETIME": data[i].admitdate,
+                    "Visit": data[i].visitperiod,
+                    "VISITDATETIME": data[i].registereddate,
                     "HOSPITAL": data[i].hospital,  //to check
                     "HOSPITALUNIT": data[i].hospitalunit,
                     "MRN": data[i].mrn,
@@ -48,8 +48,8 @@
                     "PINCODE": data[i].pincode,
                     "DEPARTMENT": data[i].department,
                     "DOCTOR": data[i].careprovider,
-                    "APPOINTMENTTYPE": data[i].apmttype,
-                    "Payor": data[i].payor2,
+                    "APPOINTMENTTYPE": data[i].encounter,
+                    "Payor": data[i].payor1,
                     "CHECKINTIME": data[i].admitdate,
                     "CHECKOUTTIME": data[i].dischargedate,
                     "CHIEFCOMPLAINT": "",
@@ -64,7 +64,7 @@
                     "Admission Visit ID": data[i].patientvisituid,
                     "Admissiondatetime": data[i].admitdate,
                     "AdmissionDoctor": data[i].careprovider,
-                    "VisitID": data[i].visitid,
+                    "VisitID": data[i].patientvisituid,
                     "AdmissionDepartment": data[i].department,
                     });                    
             }
@@ -92,6 +92,27 @@
                 dataType: tableau.dataTypeEnum.string
             },
             {
+                id: "MRN",
+                alias: "MRN",
+                dataType: tableau.dataTypeEnum.string
+            }
+            ,
+            {
+                id: "GENDER",
+                alias: "GENDER",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "DEPARTMENT",
+                alias: "DEPARTMENT",
+                dataType: tableau.dataTypeEnum.string
+            } ,
+            {
+                id: "DOCTOR",
+                alias: "DOCTOR",
+                dataType: tableau.dataTypeEnum.string
+            } ,
+            {
                  id: "Visit",
                  dataType: tableau.dataTypeEnum.string
             },
@@ -109,18 +130,6 @@
             {
                 id: "HOSPITALUNIT",
                 alias: "HOSPITALUNIT",
-                dataType: tableau.dataTypeEnum.string
-            }
-            ,
-            {
-                id: "MRN",
-                alias: "MRN",
-                dataType: tableau.dataTypeEnum.string
-            }
-            ,
-            {
-                id: "GENDER",
-                alias: "GENDER",
                 dataType: tableau.dataTypeEnum.string
             },
             {
@@ -157,16 +166,6 @@
             {
                 id: "PINCODE",
                 alias: "PINCODE",
-                dataType: tableau.dataTypeEnum.string
-            } ,
-            {
-                id: "DEPARTMENT",
-                alias: "DEPARTMENT",
-                dataType: tableau.dataTypeEnum.string
-            } ,
-            {
-                id: "DOCTOR",
-                alias: "DOCTOR",
                 dataType: tableau.dataTypeEnum.string
             } ,
             {
