@@ -1,5 +1,8 @@
 (function () {
     var myConnector = tableau.makeConnector();
+    const limit = 10000;
+    var pagenumber = 1;
+    tableData = [];
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
