@@ -39,6 +39,7 @@
                     "SNo": String(serialno+1),
                     "Visit": data[i].visit,
                     "VISITDATETIME": data[i].visitdatetime,
+                    "EncounterType": data[i].episodetype,
                     "HOSPITAL": data[i].hospital,
                     "HOSPITALUNIT": data[i].hospitalunit,
                     "MRN": data[i].mrn,
@@ -112,8 +113,8 @@
                 dataType: tableau.dataTypeEnum.string
             },
             {
-                id: "episodetype",
-                alias: "episodetype",
+                id: "EncounterType",
+                alias: "EncounterType",
                 dataType: tableau.dataTypeEnum.string
             } ,
             {
@@ -181,6 +182,11 @@
                 id: "APPOINTMENTTYPE",
                 alias: "APPOINTMENTTYPE",
                 dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "EpisodeType",
+                alias: "EpisodeType",
+                dataType: tableau.dataTypeEnum.string
             } ,
             {
                 id: "Payor",
@@ -234,11 +240,6 @@
                 id: "MODIFIEDDATETIME",
                 alias: "MODIFIEDDATETIME",
                 dataType: tableau.dataTypeEnum.datetime
-            },
-            {
-                id: "EpisodeType",
-                alias: "EpisodeType",
-                dataType: tableau.dataTypeEnum.string
             } ,
             {
                 id: "FollowingEpisodeType",
