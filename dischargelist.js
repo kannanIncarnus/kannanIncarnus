@@ -49,6 +49,7 @@
                     "medicaldischargedate": data[i].medicaldischargedate,
                     "dischargecomments": data[i].dischargeplancomments,
                     "finaldischargedate": data[i].finaldischargedate,
+                    "regdatetime": data[i].createdat,
                     "hospital": data[i].hospital,
                     "hospitalunit": data[i].hospitalunit,
                     "mrn": data[i].mrn,
@@ -95,6 +96,10 @@
                 id: "PatientName",
                 alias: "Patient Name",
                 dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id:"regdatetime",
+                dataType: tableau.dataTypeEnum.datetime
             }, {
                 id: "finaldischargedate",
                 alias: "finaldischargedate",
@@ -119,10 +124,6 @@
                 id: "createdby",
                 alias: "createdby",
                 dataType: tableau.dataTypeEnum.string
-            },
-            {
-                id:"regdatetime",
-                dataType: tableau.dataTypeEnum.datetime
             }, {
                 id: "country",
                 alias: "country",
