@@ -44,10 +44,11 @@
                 var serialno = (limit * (pagenumber-1)) + i;
                 tableData.push({
                     "SNo": String(serialno+1),
-                    "regid": data[i]._id,
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
-                    "regdatetime": data[i].registereddate,
+                    "medicaldischargedate": data[i].medicaldischargedate,
+                    "dischargecomments": data[i].dischargeplancomments,
+                    "finaldischargedate": data[i].finaldischargedate,
                     "hospital": data[i].hospital,
                     "hospitalunit": data[i].hospitalunit,
                     "mrn": data[i].mrn,
@@ -94,6 +95,18 @@
                 id: "PatientName",
                 alias: "Patient Name",
                 dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "dischargedate",
+                alias: "dischargedate",
+                dataType: tableau.dataTypeEnum.datetime
+            }, {
+                id: "dischargecomments",
+                alias: "dischargecomments",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "medicaldischargedate",
+                alias: "medicaldischargedate",
+                dataType: tableau.dataTypeEnum.datetime
             }, {
                 id: "createdat",
                 alias: "createdat",
