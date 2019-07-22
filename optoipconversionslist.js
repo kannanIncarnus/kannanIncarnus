@@ -12,16 +12,16 @@
     });
 
     myConnector.getData = function (table, doneCallback) {
-        var modifiedat = table.incrementValue
+        var createdat = table.incrementValue
 
-        if (!modifiedat) {
-            modifiedat = "2000-01-01"
+        if (!createdat) {
+            createdat = "2000-01-01"
         }
         else {
-            console.log("modifiedat: " + modifiedat);
+            console.log("createdat: " + createdat);
         }
 
-        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getoptoipconversionlist/" + limit + "/" + pagenumber + "/" + modifiedat
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getoptoipconversionlist/" + limit + "/" + pagenumber + "/" + createdat
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.getopipconversionlist;
@@ -58,7 +58,7 @@
                     "CREATEDBY": data[i].createdby,
                     "CREATEDDATETIME": data[i].createdat,
                     "MODIFIEDBY": data[i].modifiedby,
-                    "MODIFIEDDATETIME": data[i].modifiedat,
+                    "MODIFIEDDATETIME": data[i].createdat,
                     "Episode Type": "",
                     "Following Episode Type": "",
                     "Admission Visit ID": data[i].patientvisituid,
@@ -212,7 +212,7 @@
             {
                 id: "CREATEDDATETIME",
                 alias: "CREATEDDATETIME",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             }
             ,
             {
@@ -224,7 +224,7 @@
             {
                 id: "MODIFIEDDATETIME",
                 alias: "MODIFIEDDATETIME",
-                dataType: tableau.dataTypeEnum.string
+                dataType: tableau.dataTypeEnum.datetime
             },
             {
                 id: "EpisodeType",
@@ -266,7 +266,8 @@
         var tableSchema = {
             id: "OPtoIPConversions",
             alias: "Patient reports are listed here...........",
-            columns: cols
+            columns: cols,
+            incrementColumnId: "CREATEDDATETIME"
         };
     
         schemaCallback([tableSchema]);

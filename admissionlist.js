@@ -218,7 +218,7 @@
             id: "patientFeed",
             alias: "Patient reports are listed here...........",
             columns: cols,
-            incrementColumnId: "modifieddatetime"
+            incrementColumnId: "createddatetime"
         };
 
         schemaCallback([tableSchema]);

@@ -12,26 +12,26 @@
     });
 
     myConnector.getData = function (table, doneCallback) {
-        var modifiedat = table.incrementValue
+        var createdat = table.incrementValue
 
-        if (!modifiedat) {
-            modifiedat = "2000-01-01"
+        if (!createdat) {
+            createdat = "2000-01-01"
         }
         else {
-            console.log("modifiedat: " + modifiedat);
+            console.log("createdat: " + createdat);
         }
 
-        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + modifiedat
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getpatientsdata/" + limit + "/" + pagenumber + "/" + createdat
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.patients;
             var totalrecords = resp.totalrecords;
 
-            if (!modifiedat) {
-                modifiedat = "2000-01-01"
+            if (!createdat) {
+                createdat = "2000-01-01"
             }
             else {
-                console.log("modifiedat: " + modifiedat);
+                console.log("createdat: " + createdat);
             }
 
             console.log("totalRecords in the collection: " + totalrecords);
@@ -59,7 +59,7 @@
                     "createdat": data[i].createdat,
                     "createdby": data[i].createdby,
                     "modifiedby": data[i].modifiedby,
-                    "modifieddatetime": data[i].modifiedat
+                    "modifieddatetime": data[i].createdat
                 });
             }
 
@@ -128,7 +128,7 @@
                 id: "Patients",
                 alias: "Patient reports are listed here...........",
                 columns: cols,
-                incrementColumnId: "modifieddatetime"
+                incrementColumnId: "createdat"
             };
         
             schemaCallback([tableSchema]);
