@@ -27,6 +27,10 @@
             var data = resp.patients;
             var totalrecords = resp.totalrecords;
 
+            data.sort(function(a,b){
+                return new Date(a.createdat) - new Date(b.createdat);
+            });
+            
             if (!createdat) {
                 createdat = "2000-01-01"
             }
