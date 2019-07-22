@@ -28,7 +28,7 @@
             var totalrecords = resp.totalrecords;
     
             data.sort(function(a,b){
-                return new Date(b.createdat) - new Date(a.createdat);
+                return new Date(a.createdat) - new Date(b.createdat);
             });
 
             console.log("totalRecords in the collection: " + totalrecords);
