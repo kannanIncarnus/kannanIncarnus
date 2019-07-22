@@ -21,7 +21,7 @@
             console.log("modifiedat: " + modifiedat);
         }
 
-        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getoptoipconversionlist/" + limit + "/" + pagenumber //+ "/" + modifiedat
+        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/getoptoipconversionlist/" + limit + "/" + pagenumber + "/" + modifiedat
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.getopipconversionlist;
