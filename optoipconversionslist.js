@@ -37,7 +37,7 @@
                 var serialno = (limit * (pagenumber-1)) + i;
                 tableData.push({
                     "SNo": String(serialno+1),
-                    "Visit": data[i].visitperiod,
+                    "encountertype": data[i].encounter,
                     "VISITDATETIME": data[i].registereddate,
                     "HOSPITAL": data[i].hospital,  //to check
                     "HOSPITALUNIT": data[i].hospitalunit,
@@ -117,7 +117,7 @@
                 dataType: tableau.dataTypeEnum.string
             } ,
             {
-                 id: "Visit",
+                 id: "encountertype",
                  dataType: tableau.dataTypeEnum.string
             },
             {
