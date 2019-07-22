@@ -27,10 +27,10 @@
             var data = resp.registeredpatients;
             var totalrecords = resp.totalrecords;
 
-            data.sort(function(a,b){
-                return new Date(a.createdat) - new Date(b.createdat);
+            data.sort(function(arg1,arg2){
+                return new Date(arg1.createdat) - new Date(arg2.createdat);
             });
-            
+
             console.log("totalRecords in the collection: " + totalrecords);
                 // Iterate over the JSON object
                 for (var i = 0, len = data.length; i < len; i++) {
