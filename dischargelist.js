@@ -96,8 +96,8 @@
                 alias: "Patient Name",
                 dataType: tableau.dataTypeEnum.string
             }, {
-                id: "dischargedate",
-                alias: "dischargedate",
+                id: "finaldischargedate",
+                alias: "finaldischargedate",
                 dataType: tableau.dataTypeEnum.datetime
             }, {
                 id: "dischargecomments",
