@@ -37,9 +37,9 @@
                 var serialno = (limit * (pagenumber-1)) + i;
                 tableData.push({
                     "SNo": String(serialno+1),
-                    "encountertype": data[i].encounter,
-                    "VISITDATETIME": data[i].registereddate,
-                    "HOSPITAL": data[i].hospital,  //to check
+                    "Visit": data[i].visit,
+                    "VISITDATETIME": data[i].visitdatetime,
+                    "HOSPITAL": data[i].hospital,
                     "HOSPITALUNIT": data[i].hospitalunit,
                     "MRN": data[i].mrn,
                     "GENDER": data[i].gender,
@@ -52,23 +52,23 @@
                     "PINCODE": data[i].pincode,
                     "DEPARTMENT": data[i].department,
                     "DOCTOR": data[i].careprovider,
-                    "APPOINTMENTTYPE": data[i].encounter,
-                    "Payor": data[i].payor1,
-                    "CHECKINTIME": data[i].admitdate,
-                    "CHECKOUTTIME": data[i].dischargedate,
+                    "APPOINTMENTTYPE": data[i].appointmenttype,
+                    "Payor": data[i].payor,
+                    "CHECKINTIME": data[i].checkintime,
+                    "CHECKOUTTIME": data[i].checkouttime,
+                    "episodetype": data[i].episodetype,
                     "CHIEFCOMPLAINT": "",
                     "REFSOURCE": "",
                     "REFSOURCENAME": "",
                     "CREATEDBY": data[i].createdby,
                     "CREATEDDATETIME": data[i].createdat,
                     "MODIFIEDBY": data[i].modifiedby,
-                    "MODIFIEDDATETIME": data[i].createdat,
-                    "Episode Type": "",
-                    "Following Episode Type": "",
-                    "Admission Visit ID": data[i].patientvisituid,
-                    "Admissiondatetime": data[i].admitdate,
+                    "MODIFIEDDATETIME": data[i].modifiedat,
+                    "Following Episode Type": data[i].followingepisode,
+                    "Admission Visit ID": data[i].admvisitid,
+                    "Admissiondatetime": data[i].visitdatetime,
                     "AdmissionDoctor": data[i].careprovider,
-                    "VisitID": data[i].patientvisituid,
+                    "VisitID": data[i].admvisitid,
                     "AdmissionDepartment": data[i].department,
                     });                    
             }
@@ -110,6 +110,11 @@
                 id: "DEPARTMENT",
                 alias: "DEPARTMENT",
                 dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "episodetype",
+                alias: "episodetype",
+                dataType: tableau.dataTypeEnum.string
             } ,
             {
                 id: "DOCTOR",
@@ -117,7 +122,7 @@
                 dataType: tableau.dataTypeEnum.string
             } ,
             {
-                 id: "encountertype",
+                 id: "Visit",
                  dataType: tableau.dataTypeEnum.string
             },
             {
