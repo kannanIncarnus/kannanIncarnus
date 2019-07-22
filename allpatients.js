@@ -44,6 +44,7 @@
                     "hospital": data[i].hospital,
                     "hospitalunit": data[i].hospitalunit,
                     "mrn": data[i].mrn,
+                    "Age": data[i].age,
                     "gender": data[i].gender,
                     "agegroup": "", //To Check
                     "patienttype": data[i].patienttype,
@@ -103,6 +104,22 @@
             {
                 id:"regdatetime",
                 dataType: tableau.dataTypeEnum.datetime
+            },
+            {
+                id: "HOSPITAL",
+                alias: "HOSPITAL",
+                dataType: tableau.dataTypeEnum.string
+            }
+            ,
+            {
+                id: "HOSPITALUNIT",
+                alias: "HOSPITALUNIT",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "Age",
+                alias: "Age",
+                dataType: tableau.dataTypeEnum.string
             }, {
                 id: "country",
                 alias: "country",
