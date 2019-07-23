@@ -31,13 +31,6 @@
                 return new Date(arg1.createdat) - new Date(arg2.createdat);
             });
 
-            if (!createdat) {
-                createdat = "2000-01-01"
-            }
-            else {
-                console.log("createdat: " + createdat);
-            }
-
             console.log("totalRecords in the collection: " + totalrecords);
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
