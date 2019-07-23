@@ -35,6 +35,13 @@
             // Iterate over the JSON object
             for (var i = 0, len = data.length; i < len; i++) {
                 var serialno = (limit * (pagenumber-1)) + i;
+
+                if (data[i].visit != "Inpatient") {
+                    data[i].visitdatetime = "";
+                    data[i].admvisitid = "";
+                }
+
+
                 tableData.push({
                     "SNo": String(serialno+1),
                     "Visit": data[i].visit,
