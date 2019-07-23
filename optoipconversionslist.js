@@ -41,7 +41,6 @@
                     data[i].admvisitid = "";
                 }
 
-
                 tableData.push({
                     "SNo": String(serialno+1),
                     "Visit": data[i].visit,
