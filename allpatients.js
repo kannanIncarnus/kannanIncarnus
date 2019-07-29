@@ -88,6 +88,10 @@
                 id: "PatientName",
                 alias: "Patient Name",
                 dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "mrn",
+                alias: "mrn",
+                dataType: tableau.dataTypeEnum.string
             },
             {
                 id: "Age",

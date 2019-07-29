@@ -37,9 +37,48 @@
                 var serialno = (limit * (pagenumber-1)) + i;
                 tableData.push({
                     "SNo": String(serialno+1),
-                    "regid": data[i]._id,
-                    "id": data[i]._id,
-                    "PatientName": data[i].firstname,
+                    "LABRESULTS": data[i].firstname,
+                    "VisitID": data[i].firstname,
+                    "VISITDATETIME": data[i].firstname,
+                    "HOSPITAL": data[i].firstname,
+                    "HOSPITALUNIT": data[i].firstname,
+                    "MRN": data[i].firstname,
+                    "GENDER": data[i].firstname,
+                    "DOB": data[i].firstname,
+                    "VisitType": data[i].firstname,
+                    "COUNTRY": data[i].firstname,
+                    "COUNTRY": data[i].firstname,
+                    "COUNTRY": data[i].firstname,
+                    "COUNTRY": data[i].firstname,
+CITY
+PLACE
+PINCODE
+DEPARTMENT
+DOCTOR
+ENCOUNTERTYPE
+LABTEST
+SPECIMENTYPE
+SAMPLENUMBER
+SAMPLECOLLDATETIME
+PHLEBOTOMIST
+SAMPLERECEIVEDTIME
+TESTDONETIME
+RESULTNAME
+RESULTVALUE
+REFRANGE
+UOM
+REMARKS
+LABTECHNICIAN
+PATHOLOGIST
+APPROVEDDATETIME
+CREATEDBY
+CREATEDDATETIME
+MODIFIEDBY
+MODIFIEDDATETIME
+Billing group
+Billing subgroup
+Order category
+Order subcategory
                 });
             }
 
