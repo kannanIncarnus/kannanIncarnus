@@ -43,6 +43,7 @@
                     "hospital": data[i].hospital,
                     "hospitalunit": data[i].hospitalunit,
                     "mrn": data[i].mrn,
+                    "Payor": data[i].payor1,
                     "gender": data[i].gender,
                     "agegroup": "", //Missing
                     "age": data[i].age,
@@ -113,6 +114,11 @@
             {
                 id: "mrn",
                 alias: "mrn",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "Payor",
+                alias: "Payor",
                 dataType: tableau.dataTypeEnum.string
             },
             {
