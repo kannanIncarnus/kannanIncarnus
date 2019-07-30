@@ -21,7 +21,7 @@
             console.log("createdat: " + createdat);
         }
 
-        var queryPath = "https://demo.incarnus.com:8850/thirdparty/tableauservice/patientreports/dischargelist/" + limit + "/" + pagenumber + "/" + createdat
+        var queryPath = "https://demo.incarnus.com:8080/thirdparty/tableauservice/patientreports/dischargelist/" + limit + "/" + pagenumber + "/" + createdat
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.patients;
