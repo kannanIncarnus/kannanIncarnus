@@ -82,9 +82,10 @@
             
             var currentrecords = (limit * pagenumber);
             if (currentrecords < totalrecords) {
-                console.log("Fetching Again with currentrecords: " + currentrecords);
-                pagenumber++;
-                myConnector.getData(table, doneCallback);
+                doneCallback();
+                // console.log("Fetching Again with currentrecords: " + currentrecords);
+                // pagenumber++;
+                // myConnector.getData(table, doneCallback);
             }
             else {
                 pagenumber = 1;
