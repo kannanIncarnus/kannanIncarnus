@@ -104,11 +104,11 @@
             }, {
                 id: "createdat",
                 alias: "createdat",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "modifieddatetime",
                 alias: "modifieddatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "createdby",
                 alias: "createdby",
@@ -116,7 +116,7 @@
             },
             {
                 id:"regdatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             },
             {
                 id: "HOSPITAL",
