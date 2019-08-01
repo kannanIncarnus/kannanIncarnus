@@ -94,12 +94,11 @@
             }, {
                 id: "hospitalunit",
                 dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "PatientName",
+                alias: "Patient Name",
+                dataType: tableau.dataTypeEnum.string
             }
-            // , {
-            //     id: "PatientName",
-            //     alias: "Patient Name",
-            //     dataType: tableau.dataTypeEnum.string
-            // }
             , {
                 id: "createdat",
                 alias: "createdat",
@@ -123,7 +122,7 @@
             },
             {
                 id:"regdatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "patienttype",
                 alias: "patienttype",
@@ -148,7 +147,7 @@
             {
                 id: "createddatetime",
                 alias: "createddatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, 
             {
                 id: "createdby",
