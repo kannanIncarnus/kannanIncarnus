@@ -65,7 +65,7 @@
                     "Readmission Date": data[i].admitdate,
                     "ReadmissionDoctor": data[i].careprovider,
                     "ReadmissionDepartment": data[i].department,
-                    "Admission Type": data[i].admtype //To Check
+                    "Admission Type": data[i].encounter
                 });
             }
 

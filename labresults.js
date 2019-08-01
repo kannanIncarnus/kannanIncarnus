@@ -112,31 +112,8 @@
                 dataType: tableau.dataTypeEnum.string
             },
             {
-                id:"regdatetime",
-                dataType: tableau.dataTypeEnum.datetime
-            }, {
-                id: "finaldischargedate",
-                alias: "finaldischargedate",
-                dataType: tableau.dataTypeEnum.datetime
-            }, {
-                id: "dischargecomments",
-                alias: "dischargecomments",
-                dataType: tableau.dataTypeEnum.string
-            }, {
-                id: "medicaldischargedate",
-                alias: "medicaldischargedate",
-                dataType: tableau.dataTypeEnum.datetime
-            }, {
-                id: "createdat",
-                alias: "createdat",
-                dataType: tableau.dataTypeEnum.datetime
-            }, {
-                id: "modifieddatetime",
-                alias: "modifieddatetime",
-                dataType: tableau.dataTypeEnum.datetime
-            }, {
-                id: "createdby",
-                alias: "createdby",
+                id: "MRN",
+                alias: "MRN",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "country",
@@ -153,6 +130,18 @@
             }, {
                 id: "pincode",
                 alias: "pincode",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "createdat",
+                alias: "createdat",
+                dataType: tableau.dataTypeEnum.datetime
+            }, {
+                id: "modifieddatetime",
+                alias: "modifieddatetime",
+                dataType: tableau.dataTypeEnum.datetime
+            }, {
+                id: "createdby",
+                alias: "createdby",
                 dataType: tableau.dataTypeEnum.string
             }];
         

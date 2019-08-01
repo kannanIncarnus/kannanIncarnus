@@ -6,7 +6,7 @@
 
     $(document).ready(function () {
         $("#submitButton").click(function () {
-                tableau.connectionName = "Labresults List";
+                tableau.connectionName = "Cancellled Bills";
                 tableau.submit();
         });
     });
