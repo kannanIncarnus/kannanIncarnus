@@ -99,7 +99,7 @@
             {
                 id: "ADMISSIONDATETIME",
                 alias: "ADMISSIONDATETIME",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             },
             {
                 id: "ADMITDEPARTMENT",
@@ -167,7 +167,7 @@
             }, {
                 id: "DischargeDateTime",
                 alias: "DischargeDateTime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "DISCWARD",
                 alias: "DISCWARD",
@@ -175,7 +175,7 @@
             }, {
                 id: "OPVISITDATE",
                 alias: "OPVISITDATE",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "FOLLOWUPDATE",
                 alias: "FOLLOWUPDATE",
@@ -191,7 +191,7 @@
             }, {
                 id: "createddatetime",
                 alias: "createddatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             },{
                 id: "modifiedby",
                 alias: "modifiedby",
@@ -207,7 +207,7 @@
             },{
                 id: "ReadmissionDate",
                 alias: "ReadmissionDate",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             },{
                 id: "ReadmissionDoctor",
                 alias: "ReadmissionDoctor",

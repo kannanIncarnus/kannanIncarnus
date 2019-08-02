@@ -92,11 +92,11 @@
             },
             {
                 id:"regdatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "finaldischargedate",
                 alias: "finaldischargedate",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "dischargecomments",
                 alias: "dischargecomments",
@@ -104,15 +104,15 @@
             }, {
                 id: "medicaldischargedate",
                 alias: "medicaldischargedate",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "createdat",
                 alias: "createdat",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "modifieddatetime",
                 alias: "modifieddatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "createdby",
                 alias: "createdby",

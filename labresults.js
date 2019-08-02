@@ -39,47 +39,47 @@
                     "SNo": String(serialno+1),
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
-                    "age": data[i].age,
-                    "Visit": data[i].visit,
-                    "VISITDATETIME": data[i].visitdatetime,
-                    "EncounterType": data[i].episodetype,
+                    "Visit": data[i].visit, //To add
+                    "VISITDATETIME": data[i].visitdatetime, //To add
+                    "EncounterType": data[i].episodetype, //To add
                     "HOSPITAL": data[i].hospital,
                     "HOSPITALUNIT": data[i].hospitalunit,
                     "MRN": data[i].mrn,
                     "GENDER": data[i].gender,
                     "Age": data[i].age,
+                    "DOB": data[i].dateofbirth,
                     "PATIENTTYPE": data[i].patienttype,
                     "COUNTRY": data[i].country,
                     "STATE": data[i].state,
                     "CITY": data[i].city,
                     "PLACE": data[i].area,
-                    "PINCODE": data[i].pincode,
-                    "DEPARTMENT": data[i].department,
-                    "DOCTOR": data[i].careprovider,
-                    "LABRESULTS": data[i].firstname,
+                    "PINCODE": data[i].zipcode,
+                    "DEPARTMENT": data[i].department, //To add
+                    "DOCTOR": data[i].careprovider, //To add
+                    "LABRESULTS": "",
                     "createdat": data[i].createdat,
                     "createdby": data[i].createdby,
                     "modifiedby": data[i].modifiedby,
-                    "modifieddatetime": data[i].createdat,
-"LABTEST": data[i].test,
-"SPECIMENTYPE": data[i].test,
-"SAMPLENUMBER": data[i].test,
-"SAMPLECOLLDATETIME": data[i].test,
-"PHLEBOTOMIST": data[i].test,
-"SAMPLERECEIVEDTIME": data[i].test,
-"TESTDONETIME": data[i].test,
-"RESULTNAME": data[i].test,
-"RESULTVALUE": data[i].test,
-"REFRANGE": data[i].test,
-"UOM": data[i].test,
-"REMARKS": data[i].test,
-"LABTECHNICIAN": data[i].test,
-"PATHOLOGIST": data[i].test,
-"APPROVEDDATETIME": data[i].test,
-"Billing group": data[i].test,
-"Billing subgroup": data[i].test,
-"Order category": data[i].test,
-"Order subcategory": data[i].test,
+                    "modifieddatetime": data[i].modifiedat,
+                    "SPECIMENTYPE": "", //To add
+                    "SAMPLENUMBER": "", //To add
+                    "SAMPLECOLLDATETIME": data[i].test,  //To add
+                    "PHLEBOTOMIST":  "",
+                    "SAMPLERECEIVEDTIME": "",
+                    "TESTDONETIME": "",
+
+                    "LABTEST": data[i].name,
+                    "RESULTNAME": data[i].name,
+                    "RESULTVALUE": data[i].resultvalue,
+                    "REFRANGE": data[i].normalrange,
+                    "UOM": data[i].test,
+                    "REMARKS": data[i].test,
+                    
+                    "LABTECHNICIAN": data[i].approvedby,
+                    "PATHOLOGIST": "",
+                    "APPROVEDDATETIME": data[i].approvaldate,
+                    "Order category": data[i].test,
+                    "Order subcategory": data[i].test,
                 });
             }
 
@@ -112,6 +112,28 @@
                 dataType: tableau.dataTypeEnum.string
             },
             {
+                id: "gender",
+                alias: "gender",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "age",
+                alias: "age",
+                dataType: tableau.dataTypeEnum.int
+            },
+            {
+                id: "hospital",
+                alias: "hospital",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
+                id: "hospitalunit",
+                alias: "hospitalunit",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "patienttype",
+                alias: "patienttype",
+                dataType: tableau.dataTypeEnum.string
+            }{
                 id: "MRN",
                 alias: "MRN",
                 dataType: tableau.dataTypeEnum.string
@@ -134,14 +156,79 @@
             }, {
                 id: "createdat",
                 alias: "createdat",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "modifieddatetime",
                 alias: "modifieddatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "createdby",
                 alias: "createdby",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "modifiedby",
+                alias: "modifiedby",
+                dataType: tableau.dataTypeEnum.string
+            } , {
+                id: "APPROVEDDATETIME",
+                alias: "APPROVEDDATETIME",
+                dataType: tableau.dataTypeEnum.date
+            }, {
+                id: "Order category",
+                alias: "Order category",
+                dataType: tableau.dataTypeEnum.string
+            }
+            , {
+                id: "Order subcategory",
+                alias: "Order subcategory",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "HOSPITAL",
+                alias: "HOSPITAL",
+                dataType: tableau.dataTypeEnum.string
+            }
+            , {
+                id: "HOSPITALUNIT",
+                alias: "HOSPITALUNIT",
+                dataType: tableau.dataTypeEnum.string
+            }
+            , {
+                id: "DEPARTMENT",
+                alias: "DEPARTMENT",
+                dataType: tableau.dataTypeEnum.string
+            }
+            , {
+                id: "DOCTOR",
+                alias: "DOCTOR",
+                dataType: tableau.dataTypeEnum.string
+            }
+            , {
+                id: "SPECIMENTYPE",
+                alias: "SPECIMENTYPE",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "SAMPLENUMBER",
+                alias: "SAMPLENUMBER",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "RESULTNAME",
+                alias: "RESULTNAME",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "RESULTVALUE",
+                alias: "RESULTVALUE",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "REFRANGE",
+                alias: "REFRANGE",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "UOM",
+                alias: "UOM",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "REMARKS",
+                alias: "REMARKS",
                 dataType: tableau.dataTypeEnum.string
             }];
         

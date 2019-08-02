@@ -137,7 +137,7 @@
             },
             {
                 id:"regdatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }, {
                 id: "patienttype",
                 alias: "patienttype",

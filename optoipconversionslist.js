@@ -135,7 +135,7 @@
             {
                 id: "VISITDATETIME",
                 alias: "VISITDATETIME",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             },
             {
                 id: "HOSPITAL",
@@ -233,7 +233,7 @@
             {
                 id: "CREATEDDATETIME",
                 alias: "CREATEDDATETIME",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             }
             ,
             {
@@ -245,7 +245,7 @@
             {
                 id: "MODIFIEDDATETIME",
                 alias: "MODIFIEDDATETIME",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             } ,
             {
                 id: "FollowingEpisodeType",
@@ -260,7 +260,7 @@
             {
                 id: "Admissiondatetime",
                 alias: "Admissiondatetime",
-                dataType: tableau.dataTypeEnum.datetime
+                dataType: tableau.dataTypeEnum.date
             },
             {
                 id: "AdmissionDoctor",

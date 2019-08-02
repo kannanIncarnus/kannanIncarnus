@@ -70,7 +70,7 @@
         },
         {
             id: "ADMISSIONDATETIME",
-            dataType: tableau.dataTypeEnum.datetime
+            dataType: tableau.dataTypeEnum.date
         },
         {
             id: "HOSPITAL",
@@ -146,7 +146,7 @@
         },
         {
             id: "EXPECTEDDATEOFDELIVERY(EDD)",
-            dataType: tableau.dataTypeEnum.datetime
+            dataType: tableau.dataTypeEnum.date
         },
         {
             id: "EXPECTEDDATEOFDELIVERY(EDD)",
@@ -174,7 +174,7 @@
         },
         {
             id: "CREATEDDATETIME",
-            dataType: tableau.dataTypeEnum.datetime
+            dataType: tableau.dataTypeEnum.date
         },
         {
             id: "MODIFIEDBY",
@@ -182,7 +182,7 @@
         },
         {
             id: "MODIFIEDDATETIME",
-            dataType: tableau.dataTypeEnum.datetime
+            dataType: tableau.dataTypeEnum.date
         }
     ];
     
