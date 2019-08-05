@@ -39,9 +39,9 @@
                     "SNo": String(serialno+1),
                     "id": data[i]._id,
                     "PatientName": data[i].firstname,
-                    "Visit": data[i].visit, //To add
-                    "VISITDATETIME": data[i].visitdatetime, //To add
-                    "EncounterType": data[i].episodetype, //To add
+                    "Visit": data[i].visit,
+                    "VISITDATETIME": data[i].visitdatetime,
+                    "EncounterType": data[i].episodetype,
                     "HOSPITAL": data[i].hospital,
                     "HOSPITALUNIT": data[i].hospitalunit,
                     "MRN": data[i].mrn,
@@ -54,32 +54,30 @@
                     "CITY": data[i].city,
                     "PLACE": data[i].area,
                     "PINCODE": data[i].zipcode,
-                    "DEPARTMENT": data[i].department, //To add
-                    "DOCTOR": data[i].careprovider, //To add
+                    "DEPARTMENT": data[i].department,
+                    "DOCTOR": data[i].careprovider,
                     "LABRESULTS": "",
                     "createdat": data[i].createdat,
                     "createdby": data[i].createdby,
                     "modifiedby": data[i].modifiedby,
                     "modifieddatetime": data[i].modifiedat,
-                    "SPECIMENTYPE": "", //To add
-                    "SAMPLENUMBER": "", //To add
-                    "SAMPLECOLLDATETIME": data[i].test,  //To add
+                    "SPECIMENTYPE": "",
+                    "SAMPLENUMBER": "",
+                    "SAMPLECOLLDATETIME": "",
                     "PHLEBOTOMIST":  "",
                     "SAMPLERECEIVEDTIME": "",
                     "TESTDONETIME": "",
-
                     "LABTEST": data[i].name,
                     "RESULTNAME": data[i].name,
                     "RESULTVALUE": data[i].resultvalue,
                     "REFRANGE": data[i].normalrange,
-                    "UOM": data[i].test,
-                    "REMARKS": data[i].test,
-                    
+                    "HLN": data[i].HLN,
+                    "REMARKS": data[i].remarks,
                     "LABTECHNICIAN": data[i].approvedby,
                     "PATHOLOGIST": "",
                     "APPROVEDDATETIME": data[i].approvaldate,
-                    "Order category": data[i].test,
-                    "Order subcategory": data[i].test,
+                    "Order category": data[i].ordercategory,
+                    "Order subcategory": data[i].ordersubcategory,
                 });
             }
 
@@ -223,8 +221,8 @@
                 alias: "REFRANGE",
                 dataType: tableau.dataTypeEnum.string
             }, {
-                id: "UOM",
-                alias: "UOM",
+                id: "HLN",
+                alias: "HLN",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "REMARKS",
