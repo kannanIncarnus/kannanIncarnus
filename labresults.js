@@ -131,7 +131,7 @@
                 id: "patienttype",
                 alias: "patienttype",
                 dataType: tableau.dataTypeEnum.string
-            }{
+            },{
                 id: "MRN",
                 alias: "MRN",
                 dataType: tableau.dataTypeEnum.string
