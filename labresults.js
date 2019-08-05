@@ -24,12 +24,12 @@
         var queryPath = "https://localhost:9090/thirdparty/tableauservice/patientreports/getlabresults/" + limit + "/" + pagenumber + "/" + createdat
 
         $.getJSON(queryPath, function (resp) {
-            var data = resp.patients;
+            var data = resp.labresults;
             var totalrecords = resp.totalrecords;
 
-            // data.sort(function(arg1,arg2){
-            //     return new Date(arg1.createdat) - new Date(arg2.createdat);
-            // });
+            data.sort(function(arg1,arg2){
+                return new Date(arg1.createdat) - new Date(arg2.createdat);
+            });
 
             console.log("totalRecords in the collection: " + totalrecords);
             // Iterate over the JSON object
