@@ -108,6 +108,30 @@
                 id: "PatientName",
                 alias: "Patient Name",
                 dataType: tableau.dataTypeEnum.string
+            },{
+                id: "MRN",
+                alias: "MRN",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "Visit",
+                alias: "Visit",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "VISITDATETIME",
+                alias: "VISITDATETIME",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "EncounterType",
+                alias: "EncounterType",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "Order category",
+                alias: "Order category",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "Order subcategory",
+                alias: "Order subcategory",
+                dataType: tableau.dataTypeEnum.string
             },
             {
                 id: "gender",
@@ -117,23 +141,9 @@
                 id: "age",
                 alias: "age",
                 dataType: tableau.dataTypeEnum.int
-            },
-            {
-                id: "hospital",
-                alias: "hospital",
-                dataType: tableau.dataTypeEnum.string
-            },
-            {
-                id: "hospitalunit",
-                alias: "hospitalunit",
-                dataType: tableau.dataTypeEnum.string
             }, {
                 id: "patienttype",
                 alias: "patienttype",
-                dataType: tableau.dataTypeEnum.string
-            },{
-                id: "MRN",
-                alias: "MRN",
                 dataType: tableau.dataTypeEnum.string
             }, {
                 id: "country",
@@ -152,6 +162,15 @@
                 alias: "pincode",
                 dataType: tableau.dataTypeEnum.string
             }, {
+                id: "DEPARTMENT",
+                alias: "DEPARTMENT",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "DOCTOR",
+                alias: "DOCTOR",
+                dataType: tableau.dataTypeEnum.string
+            },
+            {
                 id: "createdat",
                 alias: "createdat",
                 dataType: tableau.dataTypeEnum.date
@@ -191,20 +210,10 @@
                 dataType: tableau.dataTypeEnum.string
             }
             , {
-                id: "DEPARTMENT",
-                alias: "DEPARTMENT",
-                dataType: tableau.dataTypeEnum.string
-            }
-            , {
-                id: "DOCTOR",
-                alias: "DOCTOR",
-                dataType: tableau.dataTypeEnum.string
-            }
-            , {
                 id: "SPECIMENTYPE",
                 alias: "SPECIMENTYPE",
                 dataType: tableau.dataTypeEnum.string
-            }, {
+            },{
                 id: "SAMPLENUMBER",
                 alias: "SAMPLENUMBER",
                 dataType: tableau.dataTypeEnum.string
@@ -227,6 +236,14 @@
             }, {
                 id: "REMARKS",
                 alias: "REMARKS",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "LABTECHNICIAN",
+                alias: "LABTECHNICIAN",
+                dataType: tableau.dataTypeEnum.string
+            }, {
+                id: "PATHOLOGIST",
+                alias: "PATHOLOGIST",
                 dataType: tableau.dataTypeEnum.string
             }];
         
