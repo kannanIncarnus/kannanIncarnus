@@ -21,7 +21,7 @@
             console.log("createdat: " + createdat);
         }
 
-        var queryPath = "https://localhost:9090/thirdparty/tableauservice/patientreports/getlabresults/" + limit + "/" + pagenumber + "/" + createdat
+        var queryPath = "https://demo.incarnus.com:8080/thirdparty/tableauservice/patientreports/getlabresults/" + limit + "/" + pagenumber + "/" + createdat
 
         $.getJSON(queryPath, function (resp) {
             var data = resp.labresults;
